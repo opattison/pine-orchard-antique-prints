@@ -144,11 +144,12 @@ $zindexDrawer: 10;
 
 /*================ Typography ================*/
 
-$headerFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$headerFontWeight: 700;
+$headerFontStack: Cardo, 'Times New Roman', serif;
+$headerFontWeight: 400;
 
-$bodyFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$baseFontSize: 14px; // Henseforth known as 1em
+$bodyFontStack: 'Fira Sans', Calibri, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$bodyFontWeight: 400;
+$baseFontSize: 16px; // Henseforth known as 1em
 
 @font-face {
   font-family: 'icons';
@@ -788,7 +789,7 @@ select {
   line-height: 1.6;
   font-family: $bodyFontStack;
   color: $colorTextBody;
-  font-weight: 300;
+  font-weight: $bodyFontWeight;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
 }
@@ -804,6 +805,10 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     font-weight: inherit;
   }
+}
+
+h6 {
+  font-family: $bodyFontStack;
 }
 
 /*================ Use em() Sass function to declare font-size ================*/
