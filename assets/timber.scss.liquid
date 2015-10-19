@@ -786,7 +786,7 @@ textarea,
 button,
 select {
   font-size: $baseFontSize;
-  line-height: 1.6;
+  line-height: 1.4;
   font-family: $bodyFontStack;
   color: $colorTextBody;
   font-weight: $bodyFontWeight;
@@ -799,7 +799,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $headerFontStack;
   font-weight: $headerFontWeight;
   margin: 0 0 0.5em;
-  line-height: 1.4;
 
   a {
     text-decoration: none;
@@ -814,26 +813,32 @@ h6 {
 /*================ Use em() Sass function to declare font-size ================*/
 h1 {
   font-size: em(36px);
+  line-height: 1;
 }
 
 h2 {
   font-size: em(28px);
+  line-height: 1.1;
 }
 
 h3 {
   font-size: em(22px);
+  line-height: 1.2;
 }
 
 h4 {
   font-size: em(20px);
+  line-height: 1.2;
 }
 
 h5 {
   font-size: em(16px);
+  line-height: 1.4;
 }
 
 h6 {
   font-size: em(14px);
+  line-height: 1.4;
 }
 
 
@@ -2260,7 +2265,7 @@ label.error {
   }
 }
 
-#productPrice {
+#ProductPrice {
   display: inline-block;
   margin: 14px 21px 14px 0;
   vertical-align: middle;
