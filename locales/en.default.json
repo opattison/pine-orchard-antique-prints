@@ -6,11 +6,11 @@
     },
     "404": {
       "title": "404 Page Not Found",
-      "subtext_html": "The page you requested does not exist. Click <a href=\"\/collections\/all\">here<\/a> to continue shopping."
+      "subtext_html": "The page you requested does not exist. <br><br> <a class=\"btn\" href=\"\/collections\/all\">Continue shopping<\/a>"
     },
     "breadcrumbs": {
       "home": "Home",
-      "home_link_title": "Back to the frontpage"
+      "home_link_title": "Back to home"
     },
     "newsletter_form": {
       "newsletter_email": "email@example.com",
@@ -19,8 +19,8 @@
     "search": {
       "no_results_html": "Your search for \"{{ terms }}\" did not yield any results.",
       "results_for_html": "Your search for \"{{ terms }}\" revealed the following:",
-      "title": "Search for products on our site",
-      "placeholder": "Search our store",
+      "title": "Search for items in the shop",
+      "placeholder": "Search the shop",
       "submit": "Search"
     }
   },
@@ -74,8 +74,8 @@
   },
   "collections": {
     "general": {
-      "all_of_collection": "All {{ collection }}",
-      "no_matches": "Sorry, there are no products in this collection",
+      "all_of_collection": "{{ collection }}",
+      "no_matches": "Sorry, there are no items in this collection",
       "link_title": "Browse our {{ title }} collection",
       "grid_view": "Grid view",
       "list_view": "List view",
@@ -99,8 +99,8 @@
       "date_ascending": "Date, old to new"
     },
     "onboarding": {
-      "modal_title": "This page will show all of your store's products",
-      "no_products_html": "There are no products yet, but once you begin adding them they will show up here regardless if they are in a collection.",
+      "modal_title": "This page will show all of your store's items",
+      "no_products_html": "There are no items yet, but once you begin adding them they will show up here regardless if they are in a collection.",
       "add_product": "Add Product"
     }
   },
@@ -157,7 +157,7 @@
       "password": "Password",
       "forgot_password": "Forgot your password?",
       "sign_in": "Sign In",
-      "cancel": "Return to Store",
+      "cancel": "Return to shop",
       "guest_title": "Continue as a guest",
       "guest_continue": "Continue"
     },
@@ -206,13 +206,13 @@
       "submit": "Reset Password"
     },
     "register": {
-      "title": "Create Account",
-      "first_name": "First Name",
-      "last_name": "Last Name",
+      "title": "Create account",
+      "first_name": "First name",
+      "last_name": "Last name",
       "email": "Email",
       "password": "Password",
       "submit": "Create",
-      "cancel": "Return to Store"
+      "cancel": "Return to shop"
     }
   },
   "homepage": {
@@ -223,7 +223,7 @@
     },
     "onboarding": {
       "modal_title": "Almost there...",
-      "no_products_html": "You have no products in your Frontpage collection. This placeholder will appear until you <a href=\"\/admin\/collections?tutorial=Frontpage\">add a product to this collection<\/a>.",
+      "no_products_html": "You have no items in your Frontpage collection. This placeholder will appear until you <a href=\"\/admin\/collections?tutorial=Frontpage\">add a product to this collection<\/a>.",
       "add_product": "Add a Product",
       "product_title": "Example Product Title",
       "no_collections_html": "You don't have any collections to show here. <a href=\"\/admin\/custom_collections\">Add some collections<\/a> to go along with the default Frontpage.",
@@ -261,16 +261,16 @@
   },
   "products": {
     "general": {
-      "previous_product_html": "&larr; Previous Product",
-      "next_product_html": "Next Product &rarr;",
+      "previous_product_html": "&larr; Previous Item",
+      "next_product_html": "Next Item &rarr;",
       "from_text_html": "From {{ price }}",
-      "sale_price": "Sale price",
+      "sale_price": "Discounted price",
       "regular_price": "Regular price"
     },
     "product": {
       "sold_out": "Sold Out",
-      "on_sale": "On Sale",
-      "on_sale_from_html": "<strong>On Sale<\/strong> from {{ price }}",
+      "on_sale": "Discounted",
+      "on_sale_from_html": "<strong>Discounted<\/strong> from {{ price }}",
       "unavailable": "Unavailable",
       "compare_at": "Compare at",
       "quantity": "Quantity",
