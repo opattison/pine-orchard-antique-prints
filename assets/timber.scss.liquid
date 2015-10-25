@@ -113,9 +113,6 @@ $colorNavText: {{ settings.color_nav_text }};
 $colorFooterBg: {{ settings.color_footer_bg }};
 $colorFooterText: {{ settings.color_footer_text }};
 
-// Logo max width
-$logoMaxWidth: {{ settings.logo_max_width | default: '450' | remove: 'px' }}px;
-
 // Helper colors
 $disabledGrey: #f6f6f6;
 $disabledBorder: darken($disabledGrey, 25%);
@@ -854,6 +851,13 @@ h6 {
 .h4 { @extend h4; }
 .h5 { @extend h5; }
 .h6 { @extend h6; }
+
+.small-cap {
+    -ms-font-feature-settings: 'smcp';
+   -moz-font-feature-settings: 'smcp';
+-webkit-font-feature-settings: 'smcp';
+        font-feature-settings: 'smcp';
+}
 
 p {
   margin: 0 0 ($gutter / 2) 0;
@@ -1803,32 +1807,19 @@ label.error {
 
 .site-header__logo {
   display: block;
-  color: $colorTextBody;
-  text-align: center;
   margin: 0 auto;
-  max-width: 100%;
+  max-width: 400px;
+  width: 80%;
   padding: ($gutter * 2) 0;
 
-  & h1 {
-    font-size: em(48px);
-    margin-bottom: 0;
+  & path {
+    fill: $colorTextBody;
   }
 
-  @include at-query ($min, $large) {
-    text-align: left;
-  }
-
-  &:hover,
-  &:focus {
+  &:hover path,
+  &:focus path {
     color: $colorBody;
   }
-}
-
-.site-header__logo {
-      -ms-font-feature-settings: 'smcp';
-     -moz-font-feature-settings: 'smcp';
-  -webkit-font-feature-settings: 'smcp';
-          font-feature-settings: 'smcp';
 }
 
 .site-header__search {
@@ -2239,6 +2230,10 @@ label.error {
     display: block;
     margin: 0 auto;
   }
+}
+
+.grid__price {
+  font-weight: $bodyFontDemi;
 }
 
 /*============================================================================
