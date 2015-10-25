@@ -150,7 +150,6 @@ $zindexDrawer: 10;
 
 $headerFontStack: Cardo, 'Times New Roman', serif;
 $headerFontRegular: 400;
-$headerFontBold: 700;
 
 $bodyFontStack: 'Avenir Next', Avenir, Corbel, sans-serif;
 $bodyFontRegular: 400;
@@ -804,6 +803,7 @@ select {
 h1, h2, h3, h4, h5, h6 {
   display: block;
   font-family: $headerFontStack;
+  font-weight: $headerFontRegular;
   margin: 0 0 0.5em;
 
   a {
@@ -819,19 +819,16 @@ h6 {
 /*================ Use em() Sass function to declare font-size ================*/
 h1 {
   font-size: em(36px);
-  font-weight: $headerFontBold;
   line-height: 1.1;
 }
 
 h2 {
   font-size: em(28px);
-  font-weight: $headerFontBold;
   line-height: 1.2;
 }
 
 h3 {
   font-size: em(22px);
-  font-weight: $headerFontRegular;
   line-height: 1.2;
 }
 
@@ -1594,6 +1591,7 @@ label.error {
   position: relative;
   display: table;
   border-collapse: separate;
+  margin-bottom: $gutter;
 
   .input-group-field:first-child,
   .input-group-btn:first-child,
@@ -1805,13 +1803,14 @@ label.error {
 
 .site-header__logo {
   display: block;
-  color: $colorBtnPrimary;
+  color: $colorTextBody;
   text-align: center;
   margin: 0 auto;
   max-width: 100%;
   padding: ($gutter * 2) 0;
 
   & h1 {
+    font-size: em(48px);
     margin-bottom: 0;
   }
 
@@ -1823,6 +1822,13 @@ label.error {
   &:focus {
     color: $colorBody;
   }
+}
+
+.site-header__logo {
+      -ms-font-feature-settings: 'smcp';
+     -moz-font-feature-settings: 'smcp';
+  -webkit-font-feature-settings: 'smcp';
+          font-feature-settings: 'smcp';
 }
 
 .site-header__search {
@@ -1891,7 +1897,7 @@ label.error {
 .site-nav__link {
   display: block;
   text-decoration: none;
-  padding: $gutter / 3;
+  padding: $gutter / 3 $gutter / 2;
   white-space: nowrap;
   color: $colorNavText;
 
