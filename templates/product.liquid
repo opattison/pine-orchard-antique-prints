@@ -31,7 +31,9 @@
           <img src="{{ secondary_image | product_img_url: 'large' }}" alt="{{ secondary_image.alt | escape }}" id="ProductPhotoImg">
         </a>
         {% else %}
-        <img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
+        <a href="{{ featured_image | product_img_url: '2048x2048' }}">
+          <img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
+        </a>
         {% endif %}
       </div>
 
