@@ -731,7 +731,7 @@ body {
 
 .main-content {
   display: block;
-  margin-top: $gutter;
+  margin-top: $gutter * 2;
   padding-bottom: $gutter * 2;
 }
 
@@ -1772,8 +1772,13 @@ label.error {
 /*============================================================================
   #Site Header
 ==============================================================================*/
+.site-top {
+  background-image: url('http://cdn.shopify.com/s/files/1/1029/3067/files/C0299-1440.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 .site-header {
-  padding: ($gutter / 2) 0;
 
   .grid--table {
     display: table;
@@ -1789,42 +1794,26 @@ label.error {
 }
 
 .site-header__logo {
+  display: block;
+  color: $colorTextBody;
   text-align: center;
   margin: 0 auto;
   max-width: 100%;
+  padding: ($gutter * 2) 0;
 
   @include at-query ($min, $large) {
     text-align: left;
   }
 
-  a,
-  a:hover,
-  a:focus {
-    text-decoration: none;
+  & :hover,
+  & :focus {
+    mix-blend-mode: lighten;
   }
-
-  a, img {
-    display: block;
-  }
-
-  img {
-    margin: 0 auto;
-  }
-}
-
-.site-header__logo-link {
-  max-width: $logoMaxWidth;
-  margin: 0 auto;
-}
-
-.site-header__cart-toggle {
-  display: inline-block;
 }
 
 .site-header__search {
   display: inline-block;
   max-width: 400px;
-  margin-top: $gutter / 2;
   width: 100%;
 }
 
@@ -1842,10 +1831,12 @@ label.error {
 ==============================================================================*/
 .nav-bar {
   background-color: $colorNav;
+  mix-blend-mode: lighten;
 }
 
 .site-nav {
-  font-size: em(20px);
+  font-size: em(24px);
+  font-weight: 700;
   cursor: default;
   margin: 0 0 0 (-$gutter / 2);
 
@@ -1880,7 +1871,7 @@ label.error {
 .site-nav__link {
   display: block;
   text-decoration: none;
-  padding: $gutter $gutter / 2;
+  padding: $gutter / 2;
   white-space: nowrap;
   color: $colorNavText;
 
@@ -1898,7 +1889,7 @@ label.error {
   }
 
   .site-nav--active > & {
-    font-weight: bold;
+    border-bottom: solid 6px $colorNavText;
   }
 
   .site-nav--mobile & {
