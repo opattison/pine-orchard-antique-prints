@@ -1845,7 +1845,7 @@ label.error {
 }
 
 .site-nav {
-  font-size: em(16px);
+  font-size: em(20px);
   cursor: default;
   margin: 0 0 0 (-$gutter / 2);
 
@@ -1858,21 +1858,29 @@ label.error {
     position: relative;
     display: inline-block;
   }
+
+  .text-right & {
+    margin: 0 (-$gutter) 0 0;
+  }
 }
 
-/*================ Home to hamburger and cart that toggle drawers ================*/
+/*================ Home to menu text and cart that toggle drawers ================*/
 .site-nav--mobile {
   @extend .site-nav;
 
   .text-right & {
     margin: 0 (-$gutter / 2) 0 0;
   }
+
+  & button {
+    font-size: inherit;
+  }
 }
 
 .site-nav__link {
   display: block;
   text-decoration: none;
-  padding: $gutter / 2;
+  padding: $gutter $gutter / 2;
   white-space: nowrap;
   color: $colorNavText;
 
