@@ -424,6 +424,7 @@ timber.Drawers = (function () {
 
     if (this.$activeSource && this.$activeSource.attr('aria-expanded')) {
       this.$activeSource.attr('aria-expanded', 'true');
+      this.$activeSource.addClass('is-transitioned');
     }
 
     // Lock scrolling on mobile
@@ -444,6 +445,8 @@ timber.Drawers = (function () {
 
     // deselect any focused form elements
     $(document.activeElement).trigger('blur');
+
+    this.$activeSource.removeClass('is-transitioned');
 
     // Ensure closing transition is applied to moved elements, like the nav
     this.$nodes.moved.prepareTransition({ disableExisting: true });

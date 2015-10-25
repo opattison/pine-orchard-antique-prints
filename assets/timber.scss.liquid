@@ -1104,8 +1104,9 @@ html input[disabled] {
   padding: 8px 10px;
   width: auto;
   margin: 0;
-  line-height: 1.42;
-  font-weight: bold;
+  line-height: 1.4;
+  font-size: em(18px);
+  font-weight: $bodyFontDemi;
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
@@ -1898,8 +1899,9 @@ label.error {
 
   &:hover,
   &:active,
-  &:focus {
-    background-color: black;
+  &:focus,
+  &.is-transitioned {
+    background-color: #000; // enables background transparency with color blending
     color: $colorNav;
   }
 
