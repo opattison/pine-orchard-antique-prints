@@ -96,7 +96,7 @@
           </select>
 
           <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
-          <span id="ProductPrice" class="h2" itemprop="price">
+          <span id="ProductPrice" class="product__price" itemprop="price">
             {{ current_variant.price | money }}
           </span>
 
@@ -116,6 +116,17 @@
 
       <div class="product-description rte" itemprop="description">
         {{ product.description }}
+        {% if product.collections %}
+          <h3>More like this in:</h3>
+          <ul class="no-bullets">
+          {% for collection in product.collections %}
+            {% unless collection.handle == 'frontpage' %}
+              <li>
+                <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ collection.title }}</a>
+              </li>
+            {% endunless %}
+          {% endfor %}
+        {% endif %}
       </div>
 
       {% comment %}

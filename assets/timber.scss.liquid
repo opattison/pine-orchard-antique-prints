@@ -130,13 +130,17 @@ $drawerCartWidth: 300px;
 $colorDrawers: #f6f6f6;
 $colorDrawerBorder: darken($colorDrawers, 5%);
 $colorDrawerText: #333;
-$drawerTransition: all 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
+$drawerTransition: all 200ms cubic-bezier(0.46, 0.01, 0.32, 1);
 
 // Sizing variables
 $siteWidth: 1180px;
 $gutter: 30px;
 $gridGutter: 30px; // can be a %, but nested grids will have smaller margins because of it
 $radius: 3px;
+
+// Transitions
+$transitionIn: 200ms;
+$transitionOut: 300ms;
 
 // Z-index
 $zindexNavDropdowns: 5;
@@ -145,11 +149,15 @@ $zindexDrawer: 10;
 /*================ Typography ================*/
 
 $headerFontStack: Cardo, 'Times New Roman', serif;
-$headerFontWeight: 400;
+$headerFontRegular: 400;
+$headerFontBold: 700;
 
-$bodyFontStack: 'Fira Sans', Calibri, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$bodyFontWeight: 400;
-$baseFontSize: 16px; // Henseforth known as 1em
+$bodyFontStack: 'Avenir Next', Avenir, Corbel, sans-serif;
+$bodyFontRegular: 400;
+$bodyFontMedium: 500;
+$bodyFontDemi: 600;
+$bodyFontBold: 700;
+$baseFontSize: 16px; // Henceforth known as 1em
 
 @font-face {
   font-family: 'icons';
@@ -731,7 +739,7 @@ body {
 
 .main-content {
   display: block;
-  margin-top: $gutter;
+  margin-top: $gutter * 2;
   padding-bottom: $gutter * 2;
 }
 
@@ -789,15 +797,13 @@ select {
   line-height: 1.4;
   font-family: $bodyFontStack;
   color: $colorTextBody;
-  font-weight: $bodyFontWeight;
-  -webkit-font-smoothing: antialiased;
+  font-weight: $bodyFontMedium;
   -webkit-text-size-adjust: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
   display: block;
   font-family: $headerFontStack;
-  font-weight: $headerFontWeight;
   margin: 0 0 0.5em;
 
   a {
@@ -813,16 +819,19 @@ h6 {
 /*================ Use em() Sass function to declare font-size ================*/
 h1 {
   font-size: em(36px);
-  line-height: 1;
+  font-weight: $headerFontBold;
+  line-height: 1.1;
 }
 
 h2 {
   font-size: em(28px);
-  line-height: 1.1;
+  font-weight: $headerFontBold;
+  line-height: 1.2;
 }
 
 h3 {
   font-size: em(22px);
+  font-weight: $headerFontRegular;
   line-height: 1.2;
 }
 
@@ -1095,8 +1104,9 @@ html input[disabled] {
   padding: 8px 10px;
   width: auto;
   margin: 0;
-  line-height: 1.42;
-  font-weight: bold;
+  line-height: 1.4;
+  font-size: em(18px);
+  font-weight: $bodyFontDemi;
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
@@ -1772,8 +1782,13 @@ label.error {
 /*============================================================================
   #Site Header
 ==============================================================================*/
+.site-top {
+  background-image: url('http://cdn.shopify.com/s/files/1/1029/3067/files/C0299-1440.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 .site-header {
-  padding: ($gutter / 2) 0;
 
   .grid--table {
     display: table;
@@ -1789,47 +1804,40 @@ label.error {
 }
 
 .site-header__logo {
+  display: block;
+  color: $colorBtnPrimary;
   text-align: center;
   margin: 0 auto;
   max-width: 100%;
+  padding: ($gutter * 2) 0;
+
+  & h1 {
+    margin-bottom: 0;
+  }
 
   @include at-query ($min, $large) {
     text-align: left;
   }
 
-  a,
-  a:hover,
-  a:focus {
-    text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $colorBody;
   }
-
-  a, img {
-    display: block;
-  }
-
-  img {
-    margin: 0 auto;
-  }
-}
-
-.site-header__logo-link {
-  max-width: $logoMaxWidth;
-  margin: 0 auto;
-}
-
-.site-header__cart-toggle {
-  display: inline-block;
 }
 
 .site-header__search {
   display: inline-block;
   max-width: 400px;
-  margin-top: $gutter / 2;
   width: 100%;
 }
 
 .search-bar {
   max-width: 100%;
+
+  & input {
+    background-color: $colorBody;
+    border-color: $colorBody;
+  }
 
   @include at-query ($max, $medium) {
     margin-left: auto;
@@ -1842,10 +1850,12 @@ label.error {
 ==============================================================================*/
 .nav-bar {
   background-color: $colorNav;
+  mix-blend-mode: lighten;
 }
 
 .site-nav {
-  font-size: em(16px);
+  font-size: em(24px);
+  font-weight: $bodyFontBold;
   cursor: default;
   margin: 0 0 0 (-$gutter / 2);
 
@@ -1858,28 +1868,41 @@ label.error {
     position: relative;
     display: inline-block;
   }
+
+  .text-right & {
+    margin: 0 (-$gutter) 0 0;
+  }
 }
 
-/*================ Home to hamburger and cart that toggle drawers ================*/
+/*================ Home to menu text and cart that toggle drawers ================*/
 .site-nav--mobile {
   @extend .site-nav;
 
   .text-right & {
     margin: 0 (-$gutter / 2) 0 0;
   }
+
+  & button {
+    font-size: inherit;
+    font-weight: inherit;
+  }
 }
 
 .site-nav__link {
   display: block;
   text-decoration: none;
-  padding: $gutter / 2;
+  padding: $gutter / 3;
   white-space: nowrap;
   color: $colorNavText;
 
+  transition: color $transitionIn, background-color $transitionIn * 2;
+
   &:hover,
   &:active,
-  &:focus {
-    color: darken($colorNavText, 15%);
+  &:focus,
+  &.is-transitioned {
+    background-color: #000; // enables background transparency with color blending
+    color: $colorNav;
   }
 
   .icon-arrow-down {
@@ -1890,7 +1913,7 @@ label.error {
   }
 
   .site-nav--active > & {
-    font-weight: bold;
+    border-bottom: solid 6px $colorNavText;
   }
 
   .site-nav--mobile & {
@@ -2043,13 +2066,13 @@ label.error {
   max-height: 0;
   visibility: hidden;
   overflow: hidden;
-  transition: all 300ms cubic-bezier(0.57, 0.06, 0.05, 0.95);
+  transition: all 200ms cubic-bezier(0.57, 0.06, 0.05, 0.95);
   @include backface();
 
   .mobile-nav--expanded + & {
     visibility: visible;
     max-height: 700px;
-    transition: all 700ms cubic-bezier(0.57, 0.06, 0.05, 0.95);
+    transition: all 400ms cubic-bezier(0.57, 0.06, 0.05, 0.95);
   }
 
   .mobile-nav__item:after {
@@ -2266,6 +2289,12 @@ label.error {
   li {
     margin-bottom: $gutter;
   }
+}
+
+.product__price {
+  font-family: $bodyFontStack;
+  font-size: em(24px);
+  font-weight: $bodyFontDemi;
 }
 
 #ProductPrice {
