@@ -6,7 +6,7 @@
       "cart_notes_enable": true,
       "color_body_bg": "#eeeee7",
       "color_body_text": "#182905",
-      "color_nav_bg": "#dedece",
+      "color_nav_bg": "#eeeee7",
       "color_nav_text": "#182905",
       "color_borders": "#e5e5e5",
       "color_footer_bg": "#dedece",
@@ -17,8 +17,7 @@
       "color_secondary": "#bbb",
       "favicon_enable": false,
       "footer_newsletter_enable": true,
-      "footer_social_enable": true,
-      "logo_use_image": false,
+      "footer_social_enable": true, 
       "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
       "social_twitter_link": "https:\/\/twitter.com\/shopify"
     }
