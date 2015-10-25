@@ -28,7 +28,7 @@
   <meta name="theme-color" content="{{ settings.color_primary }}">
 
   <!-- Typography =============================================== -->
-  <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400italic,400|Cardo:400,400italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Cardo:400,700,400italic' rel='stylesheet' type='text/css'>
 
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
@@ -215,7 +215,7 @@
             {% endcomment %}
             <div class="grid">
             <!-- begin site-nav -->
-              <ul class="site-nav grid__item one-half" id="AccessibleNav">
+              <ul class="site-nav grid__item five-eighths" id="AccessibleNav">
                 {% for link in linklists.main-menu.links %}
                   {% comment %}
                     Create a dropdown menu by naming a linklist the same as a link in the parent nav
@@ -245,7 +245,7 @@
                   {% endif %}
                 {% endfor %}
               </ul>
-              <div class="grid__item one-half text-right">
+              <div class="grid__item three-eighths text-right">
                 <div class="site-nav">
                   <a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
                     <span class="icon icon-cart" aria-hidden="true"></span>
