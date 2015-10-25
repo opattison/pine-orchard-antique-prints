@@ -28,7 +28,8 @@
   <meta name="theme-color" content="{{ settings.color_primary }}">
 
   <!-- Typography =============================================== -->
-  <link href='https://fonts.googleapis.com/css?family=Cardo:400,700,400italic' rel='stylesheet' type='text/css'>
+  <script src="https://use.typekit.net/ezb3ysz.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
@@ -157,7 +158,7 @@
             <div class="grid__item large--one-half">
               <a href="/" itemprop="url" class="site-header__logo large--left">
                 <h1 itemscope itemtype="http://schema.org/Organization">
-                  {{ shop.name }}
+                  {% include 'logo.svg' %}
                 </h1>
               </a>
             </div>
@@ -288,31 +289,8 @@
     <footer class="site-footer small--text-center" role="contentinfo">
       <div class="wrapper">
         <div class="grid">
-          {% if settings.footer_social_enable %}
-            <div class="grid__item large--one-third medium--one-half">
-              <h3>{{ 'layout.footer.social_title' | t }}</h3>
-                <ul class="inline-list social-icons">
-                  {% if settings.social_twitter_link != blank %}
-                    <li>
-                      <a class="icon-fallback-text" href="{{ settings.social_twitter_link }}" title="{{ shop.name }} on Twitter">
-                        <span class="icon icon-twitter" aria-hidden="true"></span>
-                        <span class="fallback-text">Twitter</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  {% if settings.social_facebook_link != blank %}
-                    <li>
-                      <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook">
-                        <span class="icon icon-facebook" aria-hidden="true"></span>
-                        <span class="fallback-text">Facebook</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                </ul>
-            </div>
-          {% endif %}
           {% if settings.footer_newsletter_enable %}
-            <div class="grid__item large--one-third push--large--one-third medium--one-half">
+            <div class="grid__item large--one-half medium--two-thirds">
               {% comment %}
                 MailChimp is the go-to newsletter service for Shopify.
                 Use the link below to find your MailChimp form action
@@ -335,6 +313,30 @@
               </form>
             </div>
           {% endif %}
+          {% if settings.footer_social_enable %}
+            <div class="grid__item large--two-fifths medium--one-third text-right small--text-center">
+              <h3>{{ 'layout.footer.social_title' | t }}</h3>
+                <ul class="inline-list social-icons">
+                  {% if settings.social_twitter_link != blank %}
+                    <li>
+                      <a class="icon-fallback-text" href="{{ settings.social_twitter_link }}" title="{{ shop.name }} on Twitter">
+                        <span class="icon icon-twitter" aria-hidden="true"></span>
+                        <span class="fallback-text">Twitter</span>
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if settings.social_facebook_link != blank %}
+                    <li>
+                      <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook">
+                        <span class="icon icon-facebook" aria-hidden="true"></span>
+                        <span class="fallback-text">Facebook</span>
+                      </a>
+                    </li>
+                  {% endif %}
+                </ul>
+            </div>
+          {% endif %}
+
           <div class="grid__item text-center">
             <hr>
             {% comment %}

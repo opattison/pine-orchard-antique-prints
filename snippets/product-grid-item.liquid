@@ -55,10 +55,10 @@
     <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
   </a>
 
-  <p class="h6">
+  <p class="h5">
     <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
   </p>
-  <p>
+  <p class="grid__price">
     {% comment %}
       You can show a leading 'from' or 'up to' by checking 'product.price_varies'
       if your variants have different prices.

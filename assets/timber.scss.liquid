@@ -113,9 +113,6 @@ $colorNavText: {{ settings.color_nav_text }};
 $colorFooterBg: {{ settings.color_footer_bg }};
 $colorFooterText: {{ settings.color_footer_text }};
 
-// Logo max width
-$logoMaxWidth: {{ settings.logo_max_width | default: '450' | remove: 'px' }}px;
-
 // Helper colors
 $disabledGrey: #f6f6f6;
 $disabledBorder: darken($disabledGrey, 25%);
@@ -150,7 +147,6 @@ $zindexDrawer: 10;
 
 $headerFontStack: Cardo, 'Times New Roman', serif;
 $headerFontRegular: 400;
-$headerFontBold: 700;
 
 $bodyFontStack: 'Avenir Next', Avenir, Corbel, sans-serif;
 $bodyFontRegular: 400;
@@ -804,6 +800,7 @@ select {
 h1, h2, h3, h4, h5, h6 {
   display: block;
   font-family: $headerFontStack;
+  font-weight: $headerFontRegular;
   margin: 0 0 0.5em;
 
   a {
@@ -819,19 +816,16 @@ h6 {
 /*================ Use em() Sass function to declare font-size ================*/
 h1 {
   font-size: em(36px);
-  font-weight: $headerFontBold;
   line-height: 1.1;
 }
 
 h2 {
   font-size: em(28px);
-  font-weight: $headerFontBold;
   line-height: 1.2;
 }
 
 h3 {
   font-size: em(22px);
-  font-weight: $headerFontRegular;
   line-height: 1.2;
 }
 
@@ -857,6 +851,13 @@ h6 {
 .h4 { @extend h4; }
 .h5 { @extend h5; }
 .h6 { @extend h6; }
+
+.small-cap {
+    -ms-font-feature-settings: 'smcp';
+   -moz-font-feature-settings: 'smcp';
+-webkit-font-feature-settings: 'smcp';
+        font-feature-settings: 'smcp';
+}
 
 p {
   margin: 0 0 ($gutter / 2) 0;
@@ -1594,6 +1595,7 @@ label.error {
   position: relative;
   display: table;
   border-collapse: separate;
+  margin-bottom: $gutter;
 
   .input-group-field:first-child,
   .input-group-btn:first-child,
@@ -1628,7 +1630,7 @@ label.error {
 
 .input-group .btn,
 .input-group .input-group-field {
-  height: 37px;
+  height: 40px;
 }
 
 .input-group .input-group-field {
@@ -1805,22 +1807,17 @@ label.error {
 
 .site-header__logo {
   display: block;
-  color: $colorBtnPrimary;
-  text-align: center;
   margin: 0 auto;
-  max-width: 100%;
+  max-width: 400px;
+  width: 80%;
   padding: ($gutter * 2) 0;
 
-  & h1 {
-    margin-bottom: 0;
+  & path {
+    fill: $colorTextBody;
   }
 
-  @include at-query ($min, $large) {
-    text-align: left;
-  }
-
-  &:hover,
-  &:focus {
+  &:hover path,
+  &:focus path {
     color: $colorBody;
   }
 }
@@ -1891,7 +1888,7 @@ label.error {
 .site-nav__link {
   display: block;
   text-decoration: none;
-  padding: $gutter / 3;
+  padding: $gutter / 3 $gutter / 2;
   white-space: nowrap;
   color: $colorNavText;
 
@@ -2233,6 +2230,10 @@ label.error {
     display: block;
     margin: 0 auto;
   }
+}
+
+.grid__price {
+  font-weight: $bodyFontDemi;
 }
 
 /*============================================================================
