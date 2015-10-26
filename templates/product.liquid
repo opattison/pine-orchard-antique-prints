@@ -116,6 +116,13 @@
 
       <div class="product-description rte" itemprop="description">
         {{ product.description }}
+        <p>
+          {% for collection in product.collections %}
+            {% if collection.title contains 'Bartlett' %}
+              The English illustrator William H. Bartlett traveled throughout the USA in the 19th century. His sketches, focused on landscape and city views, were engraved and featured in the publication <a href="/collections/prints-from-american-scenery">“American Scenery”</a>. <a href="/collections/william-bartlett-prints">Read more about Bartlett’s work</a>.
+            {% endif %}
+          {% endfor %}
+        </p>
         {% if product.collections %}
           <h3>More like this in:</h3>
           <ul class="no-bullets">
