@@ -123,9 +123,9 @@
             {% endif %}
           {% endfor %}
         </p>
-        {% if product.collections %}
-          <h3>More like this in:</h3>
-          <ul class="no-bullets">
+        <h3>More like this in:</h3>
+        <ul class="no-bullets">
+
           {% for collection in product.collections %}
             {% unless collection.handle == 'frontpage' %}
               <li>
@@ -133,7 +133,8 @@
               </li>
             {% endunless %}
           {% endfor %}
-        {% endif %}
+
+        </ul>
       </div>
 
       {% comment %}
