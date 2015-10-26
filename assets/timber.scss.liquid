@@ -1894,8 +1894,8 @@ label.error {
 .site-nav--mobile {
   @include site-nav;
 
-  .text-right & {
-    margin: 0 (-$gutter) 0 0;
+  @include at-query ($max, $small) {
+    margin: 0 (-$gutter / 2) 0 (-$gutter / 2);
   }
 
   & button {
