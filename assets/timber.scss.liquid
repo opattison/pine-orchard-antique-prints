@@ -1820,6 +1820,10 @@ label.error {
   &:focus path {
     color: $colorBody;
   }
+
+  @media screen and (min-width: ($siteWidth + $gutter) ) {
+    margin-left: (-$gutter);
+  }
 }
 
 .site-header__search {
