@@ -1816,13 +1816,17 @@ label.error {
   width: 80%;
   padding: ($gutter * 2) 0;
 
+  &:focus {
+    background-color: transparent;
+  }
+
   & path {
     fill: $colorTextBody;
   }
 
   &:hover path,
   &:focus path {
-    color: $colorBody;
+    fill: $colorBody;
   }
 
   @media screen and (min-width: ($siteWidth + $gutter) ) {
