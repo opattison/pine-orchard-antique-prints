@@ -1085,9 +1085,13 @@ a,
   background: transparent;
 }
 
-a:hover,
-a:focus {
+a:hover {
   color: $colorLinkHover;
+}
+
+a:focus {
+  background-color: $colorLinkHover;
+  color: $colorBody;
 }
 
 button {
@@ -1812,13 +1816,21 @@ label.error {
   width: 80%;
   padding: ($gutter * 2) 0;
 
+  &:focus {
+    background-color: transparent;
+  }
+
   & path {
     fill: $colorTextBody;
   }
 
   &:hover path,
   &:focus path {
-    color: $colorBody;
+    fill: $colorBody;
+  }
+
+  @media screen and (min-width: ($siteWidth + $gutter) ) {
+    margin-left: (-$gutter);
   }
 }
 
@@ -1850,11 +1862,15 @@ label.error {
   mix-blend-mode: lighten;
 }
 
-.site-nav {
+@mixin site-nav {
   font-size: em(24px);
   font-weight: $bodyFontBold;
   cursor: default;
-  margin: 0 0 0 (-$gutter / 2);
+  margin: 0 (-$gutter) 0 (-$gutter);
+}
+
+.site-nav {
+  @include site-nav;
 
   li {
     margin: 0;
@@ -1871,12 +1887,16 @@ label.error {
   }
 }
 
+.site-nav--flex {
+  display: flex;
+}
+
 /*================ Home to menu text and cart that toggle drawers ================*/
 .site-nav--mobile {
-  @extend .site-nav;
+  @include site-nav;
 
   .text-right & {
-    margin: 0 (-$gutter / 2) 0 0;
+    margin: 0 (-$gutter) 0 0;
   }
 
   & button {
