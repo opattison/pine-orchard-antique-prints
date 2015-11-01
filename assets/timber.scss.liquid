@@ -2241,14 +2241,19 @@ label.error {
 /*============================================================================
   #Product and Collection Grids
 ==============================================================================*/
-.grid__image {
+.grid__link-block {
   display: block;
   margin: 0 auto ($gutter / 2);
 
-  img {
-    display: block;
-    margin: 0 auto;
+  p {
+    margin: ($gutter / 4) 0 0;
   }
+}
+
+.grid__image {
+  background-size: cover;
+  background-position: center;
+  height: 10em;
 }
 
 .grid__price {
