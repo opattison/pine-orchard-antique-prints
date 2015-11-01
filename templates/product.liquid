@@ -120,9 +120,17 @@
 
       <div class="product-description rte" itemprop="description">
         {{ product.description }}
-        {% if product.collections %}
-          <h3>More like this in:</h3>
-          <ul class="no-bullets">
+        <p>
+          {% for collection in product.collections %}
+            {% if collection.title contains 'Bartlett' %}
+              The English illustrator William H. Bartlett traveled throughout the USA in the 19th century. His sketches, focused on landscape and city views, were engraved and featured in the publication <a href="/collections/prints-from-american-scenery">“American Scenery”</a>. <a href="/collections/william-bartlett-prints">Read more about Bartlett’s work</a>.
+            {% elsif collection.title contains 'Picturesque' %}
+              “Picturesque America” was the most popular late nineteenth century guide to American scenery, with descriptions, illustrated by wood and steel engravings, of scenery in all parts of the country including the West. <a href="collections/prints-from-picturesque-america">Read more about this publication</a>.
+            {% endif %}
+          {% endfor %}
+        </p>
+        <h3>More like this in:</h3>
+        <ul class="no-bullets">
 
           {% for collection in product.collections %}
             {% unless collection.handle == 'frontpage' %}
@@ -131,9 +139,8 @@
               </li>
             {% endunless %}
           {% endfor %}
-          
-          </ul>
-        {% endif %}
+
+        </ul>
       </div>
 
       {% comment %}
