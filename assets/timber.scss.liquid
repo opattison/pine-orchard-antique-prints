@@ -865,9 +865,14 @@ h6 {
 .h6 { @extend h6; }
 
 .small-cap {
-  font-size: 1.1em;
   font-family: $serif;
-  line-height: 1;
+
+  @include smcp;
+}
+
+.small-cap--plus {
+  @extend .small-cap;
+  font-size: 1.1em;
 
   @include smcp;
 }
@@ -1056,10 +1061,6 @@ hr {
 ==============================================================================*/
 .rte {
   margin-bottom: $gutter / 2;
-
-  a {
-    text-decoration: underline;
-  }
 
   // Add some top margin to headers from the rich text editor
   h1, h2, h3, h4, h5, h6 {
@@ -2254,14 +2255,19 @@ label.error {
 /*============================================================================
   #Product and Collection Grids
 ==============================================================================*/
-.grid__image {
+.grid__link-block {
   display: block;
   margin: 0 auto ($gutter / 2);
 
-  img {
-    display: block;
-    margin: 0 auto;
+  p {
+    margin: ($gutter / 4) 0 0;
   }
+}
+
+.grid__image {
+  background-size: cover;
+  background-position: center;
+  height: 10em;
 }
 
 .grid__price {

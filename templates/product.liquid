@@ -123,9 +123,9 @@
         <p>
           {% for collection in product.collections %}
             {% if collection.title contains 'Bartlett' %}
-              The English illustrator William H. Bartlett traveled throughout the USA in the 19th century. His sketches, focused on landscape and city views, were engraved and featured in the publication <a href="/collections/prints-from-american-scenery">“American Scenery”</a>. <a href="/collections/william-bartlett-prints">Read more about Bartlett’s work</a>.
+              The English illustrator William H. Bartlett traveled throughout the USA in the 19th century. His sketches, focused on landscape and city views, were engraved and featured in the publication <a class="small-cap--plus" href="/collections/prints-from-american-scenery">“American Scenery”</a>. <a href="/collections/william-bartlett-prints">Read more about Bartlett’s work</a>.
             {% elsif collection.title contains 'Picturesque' %}
-              “Picturesque America” was the most popular late nineteenth century guide to American scenery, with descriptions, illustrated by wood and steel engravings, of scenery in all parts of the country including the West. <a href="collections/prints-from-picturesque-america">Read more about this publication</a>.
+              <span class="small-cap--plus">“Picturesque America”</span> was the most popular late nineteenth century guide to American scenery, with descriptions, illustrated by wood and steel engravings, of scenery in all parts of the country. <a href="collections/prints-from-picturesque-america">Read more about this publication</a>.
             {% endif %}
           {% endfor %}
         </p>
