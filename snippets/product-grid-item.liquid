@@ -52,8 +52,15 @@
 
   {% endcomment %}
   <a href="{{ product.url | within: collection }}" class="grid__link-block">
-    <div class="grid__image" style="background-image: url('{{ product.featured_image.src | img_url: 'large' }}')">
+    {% assign feature_image = product.images[0].src %}
+    {% assign crop_image = product.images[1].src %}
+    {% if product.images.size > 1 %}
+    <div class="grid__image" style="background-image: url('{{ crop_image | img_url: 'large' }}')">
     </div>
+    {% else %}
+    <div class="grid__image" style="background-image: url('{{ feature_image | img_url: 'large' }}')">
+    </div>
+    {% endif %}
     <p class="h5">
       {{ product.title }}
     </p>
