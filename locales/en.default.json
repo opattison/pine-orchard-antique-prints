@@ -217,8 +217,8 @@
   },
   "homepage": {
     "sections": {
-      "frontpage_title": "Hand-picked items",
-      "featured_title": "Featured collections",
+      "frontpage_title": "Featured items",
+      "featured_title": "Collections",
       "news_title": "Latest News"
     },
     "onboarding": {
