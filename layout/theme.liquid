@@ -214,7 +214,7 @@
             {% endcomment %}
             <div class="grid">
             <!-- begin site-nav -->
-              <ul class="site-nav site-nav--flex grid__item one-half" id="AccessibleNav">
+              <ul class="site-nav site-nav--flex grid__item five-eighths" id="AccessibleNav">
                 {% for link in linklists.main-menu.links %}
                   {% comment %}
                     Create a dropdown menu by naming a linklist the same as a link in the parent nav
@@ -244,7 +244,7 @@
                   {% endif %}
                 {% endfor %}
               </ul>
-              <div class="grid__item site-nav one-half text-right right">
+              <div class="grid__item site-nav three-eighths text-right right">
                 <a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
                   <span class="icon icon-cart" aria-hidden="true"></span>
                   {{ 'layout.cart.title' | t }} (<span id="CartCount">{{ cart.item_count }}</span> {{ 'layout.cart.items_count' | t: count: cart.item_count }} <span id="CartCost">{{ cart.total_price | money }}</span>)
