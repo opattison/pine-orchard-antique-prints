@@ -21,15 +21,15 @@
     {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
 
     <div class="section-header">
-      <p class="h1 section-header__left">{{ collection_title }}</p>
+      <h2 class="section-header__left"><a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ collection_title }}</a></h2>
       <div class="section-header__right">
         <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">More {{ collection_title }} &rsaquo;</a>
       </div>
     </div>
 
     <div class="grid">
-      {% for product in collection.products limit:5 %}
-        {% assign grid_item_width = 'large--one-fifth medium--one-half' %}
+      {% for product in collection.products limit:4 %}
+        {% assign grid_item_width = 'large--one-quarter medium--one-half' %}
         {% include 'product-grid-item' %}
       {% endfor %}
     </div>
