@@ -1884,15 +1884,17 @@ label.error {
   mix-blend-mode: lighten;
 }
 
-@mixin site-nav {
+@mixin nav {
   font-size: em(24px);
   font-weight: $bodyFontBold;
   cursor: default;
-  margin: 0 (-$gutter) 0 (-$gutter);
+  margin: 0;
 }
 
 .site-nav {
-  @include site-nav;
+  @include nav;
+
+  display: flex;
 
   li {
     margin: 0;
@@ -1905,22 +1907,13 @@ label.error {
   }
 
   &.text-right {
-    margin: 0 (-$gutter) 0 0;
-    padding: 0;
+    justify-content: flex-end;
   }
-}
-
-.site-nav--flex {
-  display: flex;
 }
 
 /*================ Home to menu text and cart that toggle drawers ================*/
 .site-nav--mobile {
-  @include site-nav;
-
-  @include at-query ($max, $small) {
-    margin: 0 (-$gutter / 2) 0 (-$gutter / 2);
-  }
+  @include nav;
 
   & button {
     font-size: inherit;
