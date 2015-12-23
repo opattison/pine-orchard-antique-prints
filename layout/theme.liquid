@@ -204,71 +204,70 @@
         </div>
       </header>
       <nav class="nav-bar" role="navigation">
-        <div class="wrapper">
-          <div class="medium-down--hide">
-            {% comment %}
-              List out your main-menu linklist (default)
+        <div class="medium-down--hide">
+          {% comment %}
+            List out your main-menu linklist (default)
 
-              More info on linklists:
-                - http://docs.shopify.com/themes/liquid-variables/linklists
-            {% endcomment %}
-            <div class="grid">
-            <!-- begin site-nav -->
-              <ul class="site-nav site-nav--flex grid__item one-half" id="AccessibleNav">
-                {% for link in linklists.main-menu.links %}
-                  {% comment %}
-                    Create a dropdown menu by naming a linklist the same as a link in the parent nav
+            More info on linklists:
+              - http://docs.shopify.com/themes/liquid-variables/linklists
+          {% endcomment %}
+          <div class="grid">
+          <!-- begin site-nav -->
+            <ul class="site-nav grid__item five-eighths" id="AccessibleNav">
+              {% for link in linklists.main-menu.links %}
+                {% comment %}
+                  Create a dropdown menu by naming a linklist the same as a link in the parent nav
 
-                    More info on dropdowns:
-                      - http://docs.shopify.com/manual/your-website/navigation/create-drop-down-menu
-                  {% endcomment %}
-                  {% assign child_list_handle = link.title | handleize %}
-                  {% if linklists[child_list_handle].links != blank %}
-                    <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
-                      <a href="{{ link.url }}" class="site-nav__link">
-                        {{ link.title }}
-                        <span class="icon icon-arrow-down" aria-hidden="true"></span>
-                      </a>
-                      <ul class="site-nav__dropdown">
-                        {% for childlink in linklists[child_list_handle].links %}
-                          <li{% if childlink.active %} class="site-nav--active"{% endif %}>
-                            <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
-                          </li>
-                        {% endfor %}
-                      </ul>
-                    </li>
-                  {% else %}
-                    <li {% if link.active %}class="site-nav--active"{% endif %}>
-                      <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-                    </li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-              <div class="grid__item site-nav one-half text-right right">
-                <a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
-                  <span class="icon icon-cart" aria-hidden="true"></span>
-                  {{ 'layout.cart.title' | t }} (<span id="CartCount">{{ cart.item_count }}</span> {{ 'layout.cart.items_count' | t: count: cart.item_count }} <span id="CartCost">{{ cart.total_price | money }}</span>)
-                </a>
+                  More info on dropdowns:
+                    - http://docs.shopify.com/manual/your-website/navigation/create-drop-down-menu
+                {% endcomment %}
+                {% assign child_list_handle = link.title | handleize %}
+                {% if linklists[child_list_handle].links != blank %}
+                  <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
+                    <a href="{{ link.url }}" class="site-nav__link">
+                      {{ link.title }}
+                      <span class="icon icon-arrow-down" aria-hidden="true"></span>
+                    </a>
+                    <ul class="site-nav__dropdown">
+                      {% for childlink in linklists[child_list_handle].links %}
+                        <li{% if childlink.active %} class="site-nav--active"{% endif %}>
+                          <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% else %}
+                  <li {% if link.active %}class="site-nav--active"{% endif %}>
+                    <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+
+            <div class="grid__item site-nav three-eighths text-right right">
+              <a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
+                <span class="icon icon-cart" aria-hidden="true"></span>
+                {{ 'layout.cart.title' | t }} (<span id="CartCount">{{ cart.item_count }}</span> {{ 'layout.cart.items_count' | t: count: cart.item_count }} <span id="CartCost">{{ cart.total_price | money }}</span>)
+              </a>
+            </div>
+          </div>
+          <!-- //site-nav -->
+        </div>
+        <div class="large--hide medium-down--show">
+          <div class="grid">
+            <div class="grid__item one-half">
+              <div class="site-nav--mobile">
+                <button type="button" class="icon-fallback-text site-nav__link js-drawer-open-left" aria-controls="NavDrawer" aria-expanded="false">
+                  {{ 'layout.navigation.menu' | t }}
+                </button>
               </div>
             </div>
-            <!-- //site-nav -->
-          </div>
-          <div class="large--hide medium-down--show">
-            <div class="grid">
-              <div class="grid__item one-half">
-                <div class="site-nav--mobile">
-                  <button type="button" class="icon-fallback-text site-nav__link js-drawer-open-left" aria-controls="NavDrawer" aria-expanded="false">
-                    {{ 'layout.navigation.menu' | t }}
-                  </button>
-                </div>
-              </div>
-              <div class="grid__item one-half text-right">
-                <div class="site-nav--mobile">
-                  <a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
-                    <span class="icon icon-cart" aria-hidden="true"></span>
-                    {{ 'layout.cart.title' | t }}
-                  </a>
-                </div>
+            <div class="grid__item one-half text-right">
+              <div class="site-nav--mobile">
+                <a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
+                  <span class="icon icon-cart" aria-hidden="true"></span>
+                  {{ 'layout.cart.title' | t }}
+                </a>
               </div>
             </div>
           </div>

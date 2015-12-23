@@ -268,7 +268,7 @@
       "regular_price": "Regular price"
     },
     "product": {
-      "sold_out": "Sold Out",
+      "sold_out": "Sold",
       "on_sale": "Discounted",
       "on_sale_from_html": "<strong>Discounted<\/strong> from {{ price }}",
       "unavailable": "Unavailable",

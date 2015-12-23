@@ -55,8 +55,8 @@
 $viewportIncrement: 1px;
 
 $small: 480px;
-$medium: 768px;
-$large: 769px;
+$medium: 800px;
+$large: 801px;
 
 $postSmall: $small + $viewportIncrement;
 $preMedium: $medium - $viewportIncrement;
@@ -793,6 +793,10 @@ body {
   margin: -1px; padding: 0; border: 0;
 }
 
+.strikethrough {
+  text-decoration: line-through;
+}
+
 /*============================================================================
   #Typography
 ==============================================================================*/
@@ -1219,6 +1223,11 @@ ol.alpha { list-style: lower-alpha outside; }
 .no-bullets {
   list-style: none outside;
   margin-left: 0;
+
+  li {
+    line-height: 1.25;
+    margin-bottom: .75em;
+  }
 }
 
 .inline-list {
@@ -1875,15 +1884,17 @@ label.error {
   mix-blend-mode: lighten;
 }
 
-@mixin site-nav {
+@mixin nav {
   font-size: em(24px);
   font-weight: $bodyFontBold;
   cursor: default;
-  margin: 0 (-$gutter) 0 (-$gutter);
+  margin: 0;
 }
 
 .site-nav {
-  @include site-nav;
+  @include nav;
+
+  display: flex;
 
   li {
     margin: 0;
@@ -1895,22 +1906,14 @@ label.error {
     display: inline-block;
   }
 
-  .text-right & {
-    margin: 0 (-$gutter) 0 0;
+  &.right {
+    justify-content: flex-end;
   }
-}
-
-.site-nav--flex {
-  display: flex;
 }
 
 /*================ Home to menu text and cart that toggle drawers ================*/
 .site-nav--mobile {
-  @include site-nav;
-
-  @include at-query ($max, $small) {
-    margin: 0 (-$gutter / 2) 0 (-$gutter / 2);
-  }
+  @include nav;
 
   & button {
     font-size: inherit;
