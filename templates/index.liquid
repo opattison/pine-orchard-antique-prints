@@ -53,7 +53,7 @@
 <div class="grid-uniform">
 
   {% comment %}
-    Show five collections, unless it's 'frontpage'.
+    Show six collections, unless it's 'frontpage'.
 
     Use an index variable in combination to the limit filter
     to account for the frontpage collection being in top six returned.
@@ -64,8 +64,8 @@
   {% assign index = 1 %}
   {% assign isEmpty = true %}
 
-  {% for collection in collections limit:6 %}
-    {% unless index > 5 %}
+  {% for collection in collections limit:7 %}
+    {% unless index > 6 %}
 
       {% unless collection.handle == 'frontpage' %}
 
@@ -77,69 +77,4 @@
     {% endunless %}
   {% endfor %}
 
-  {% comment %}
-    For onboarding new users to your theme, we add some default collections and onboarding tutorials to help populate their store
-  {% endcomment %}
-
-  {% if isEmpty %}
-    {% unless emptyState %}
-      {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
-      {% assign emptyState = true %}
-    {% endunless %}
-
-    {% include 'onboarding-featured-collections' %}
-  {% endif %}
-
-</div>
-
-<hr>
-
-{% comment %}
-  Loop through three recent blog articles with the following code.
-
-  Since we're not on the blog template, we need to define the blog
-  handle we want to focus on. For this example we'll use the default 'news',
-  but you can create a blog page-specific content if you want.
-{% endcomment %}
-<h2>{{ 'homepage.sections.news_title' | t }}</h2>
-
-<div class="grid">
-  {% for article in blogs['news'].articles limit:3 %}
-
-    <div class="grid__item large--one-third">
-
-      <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
-      <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
-
-      {% comment %}
-        Add a surrounding div with class 'rte' to anything that will come from the rich text editor.
-        Since this is just a listing page, you can either use the excerpt or truncate the full article.
-      {% endcomment %}
-      <div class="rte">
-        {% if article.excerpt.size > 0 %}
-          {{ article.excerpt }}
-        {% else %}
-          <p>{{ article.content | strip_html | truncatewords: 20 }}</p>
-        {% endif %}
-      </div>
-
-      {% comment %}
-        Show off meta information like number of comments and tags.
-      {% endcomment %}
-      <ul>
-        {% if blog.comments_enabled? %}
-        <li>
-          <a href="{{ article.url }}#comments">
-            {{ article.comments_count }}
-            {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
-          </a>
-        </li>
-        {% endif %}
-      </ul>
-
-      <p><a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }} &rarr;</a></p>
-
-    </div>
-
-  {% endfor %}
 </div>
