@@ -832,12 +832,12 @@ h6 {
 /*================ Use em() Sass function to declare font-size ================*/
 h1 {
   font-size: em(36px);
-  line-height: 1.1;
+  line-height: 1;
 }
 
 h2 {
   font-size: em(28px);
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 h3 {
@@ -960,7 +960,7 @@ pre {
 /*================ Horizontal Rules ================*/
 hr {
   clear: both;
-  border-top: solid $colorBorder;
+  border-top: solid $colorPrimary;
   border-width: 1px 0 0;
   margin: $gutter 0;
   height: 0;
@@ -1068,7 +1068,7 @@ hr {
 
   // Add some top margin to headers from the rich text editor
   h1, h2, h3, h4, h5, h6 {
-    margin-top: 2em;
+    margin-top: 1em;
 
     &:first-child {
       margin-top: 0;
