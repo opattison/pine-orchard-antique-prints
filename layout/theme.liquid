@@ -284,8 +284,31 @@
     <footer class="site-footer small--text-center" role="contentinfo">
       <div class="wrapper">
         <div class="grid">
+          {% if settings.footer_social_enable %}
+            <div class="grid__item large--three-eighths medium--one-third small--text-center">
+              <h3>{{ 'layout.footer.social_title' | t }}</h3>
+                <ul class="inline-list social-icons">
+                  {% if settings.social_twitter_link != blank %}
+                    <li>
+                      <a class="icon-fallback-text" href="{{ settings.social_twitter_link }}" title="{{ shop.name }} on Twitter">
+                        <span class="icon icon-twitter" aria-hidden="true"></span>
+                        <span class="fallback-text">Twitter</span>
+                      </a>
+                    </li>
+                  {% endif %}
+                  {% if settings.social_facebook_link != blank %}
+                    <li>
+                      <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook">
+                        <span class="icon icon-facebook" aria-hidden="true"></span>
+                        <span class="fallback-text">Facebook</span>
+                      </a>
+                    </li>
+                  {% endif %}
+                </ul>
+            </div>
+          {% endif %}
           {% if settings.footer_newsletter_enable %}
-            <div class="grid__item large--one-half medium--two-thirds">
+            <div class="grid__item large--five-eighths medium--two-thirds">
               {% comment %}
                 MailChimp is the go-to newsletter service for Shopify.
                 Use the link below to find your MailChimp form action
@@ -306,29 +329,6 @@
                   <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
                 </span>
               </form>
-            </div>
-          {% endif %}
-          {% if settings.footer_social_enable %}
-            <div class="grid__item large--two-fifths medium--one-third text-right small--text-center">
-              <h3>{{ 'layout.footer.social_title' | t }}</h3>
-                <ul class="inline-list social-icons">
-                  {% if settings.social_twitter_link != blank %}
-                    <li>
-                      <a class="icon-fallback-text" href="{{ settings.social_twitter_link }}" title="{{ shop.name }} on Twitter">
-                        <span class="icon icon-twitter" aria-hidden="true"></span>
-                        <span class="fallback-text">Twitter</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  {% if settings.social_facebook_link != blank %}
-                    <li>
-                      <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook">
-                        <span class="icon icon-facebook" aria-hidden="true"></span>
-                        <span class="fallback-text">Facebook</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                </ul>
             </div>
           {% endif %}
 
