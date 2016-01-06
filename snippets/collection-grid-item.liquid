@@ -9,8 +9,17 @@
   {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
 
   <a href="{{ collection.url }}" class="grid__link-block">
-    <div class="grid__image" style="background-image: url('{% if collection.image %}{{ collection.image.src | img_url: 'large' }}{% else %}{{ collection.products.first.featured_image | img_url: 'large' }}{% endif %}')">
+
+    {% assign feature_image = collection.products.first.images[0].src %}
+    {% assign crop_image = collection.products.first.images[1].src %}
+    {% if collection.products.first.images.size > 1 %}
+    <div class="grid__image" style="background-image: url('{{ crop_image | img_url: 'large' }}')">
     </div>
+    {% else %}
+    <div class="grid__image" style="background-image: url('{{ feature_image | img_url: 'large' }}')">
+    </div>
+    {% endif %}
+
     <p class="h5">
       <span class="small-cap">{{ collection.title }}</span> – {{ 'collections.general.items_with_count' | t: count: collection.all_products_count }}
     </p>
