@@ -81,8 +81,15 @@
         </button>
         {% endraw %}{% if additional_checkout_buttons %}
           <div class="additional_checkout_buttons">{{ content_for_additional_checkout_buttons }}</div>
-        {% endif %}{% raw %}
+        {% endif %}
+        {% if cart.item_count == 2 %}
+          <input type="hidden" name="discount" value="more-than-two-items"/>
+        {% elsif cart.item_count >= 3 %}
+          <input type="hidden" name="discount" value="more-than-three-items"/>
+        {% endif %}
+  {% raw %}
       </div>
+
     </form>
   {% endraw %}
   </script>
