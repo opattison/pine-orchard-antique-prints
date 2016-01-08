@@ -64,8 +64,7 @@
   {% assign index = 1 %}
   {% assign isEmpty = true %}
 
-  {% for collection in collections limit:7 %}
-    {% unless index > 6 %}
+  {% for collection in collections %}
 
       {% unless collection.handle == 'frontpage' %}
 
@@ -74,7 +73,6 @@
         {% assign index = index | plus: 1 %}
       {% endunless %}
 
-    {% endunless %}
   {% endfor %}
 
 </div>
