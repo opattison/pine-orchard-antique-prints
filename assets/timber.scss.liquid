@@ -2271,7 +2271,15 @@ label.error {
 .grid__image {
   background-size: cover;
   background-position: center;
-  height: 11em;
+  height: 8em;
+
+  @include at-query ($min, $medium) {
+    height: 10em;
+  }
+
+  @include at-query ($min, $large) {
+    height: 11em;
+  }
 }
 
 .grid__price {
