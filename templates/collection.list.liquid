@@ -19,7 +19,7 @@
 
 {% include 'breadcrumb' %}
 
-<div class="grid">
+<div class="grid grid--list">
   <div class="grid__item large--three-quarters">
 
     {% comment %}
@@ -85,18 +85,26 @@
             For more info on navigation within a collection
               - http://docs.shopify.com/support/your-store/collections/how-to-navigate-within-a-collection
           {% endcomment %}
-          <div class="grid large--display-table">
-            <div class="grid__item large--one-fifth large--display-table-cell medium--one-third">
+          <div class="grid">
+            <div class="grid__item large--one-fifth medium--one-third">
               <a href="{{ product.url | within: collection }}">
-                <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}" class="grid__image">
+                {% assign feature_image = product.images[0].src %}
+                {% assign crop_image = product.images[1].src %}
+                {% if product.images.size > 1 %}
+                <div class="grid__image" style="background-image: url('{{ crop_image | img_url: 'medium' }}')">
+                </div>
+                {% else %}
+                <div class="grid__image" style="background-image: url('{{ feature_image | img_url: 'medium' }}')">
+                </div>
+                {% endif %}
               </a>
             </div>
-            <div class="grid__item large--four-fifths large--display-table-cell medium--two-thirds">
+            <div class="grid__item large--four-fifths medium--two-thirds">
               <div class="grid">
                 <div class="grid__item large--three-quarters medium--two-thirds">
-                  <p class="h5"><a href="{{ product.url | within: collection }}">{{ product.title }}</a></p>
+                  <p class="h3"><a href="{{ product.url | within: collection }}">{{ product.title }}</a></p>
                   <div class="rte">
-                    <p>{{ product.content | strip_html | truncatewords: 30 }}</p>
+                    <p>{{ product.content | truncatewords: 20 }}</p>
                   </div>
                 </div>
                 <div class="grid__item large--one-quarter medium--one-third">
@@ -104,6 +112,7 @@
                     You can show a leading 'from' or 'up to' by checking 'product.price_varies'
                     if your variants have different prices.
                   {% endcomment %}
+                  <a class="grid__price" href="{{ product.url | within: collection }}">
                   {% if on_sale %}
                     {% if product.price_varies %}
                       {% assign sale_price = product.price | money %}
@@ -126,6 +135,7 @@
                   {% if on_sale %}
                     <br><span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span><s>{{ product.compare_at_price | money }}</s>
                   {% endif %}
+                  </a>
                 </div>
               </div>
             </div>
