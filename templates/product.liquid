@@ -125,9 +125,14 @@
         <h3>More like this in:</h3>
         <ul class="no-bullets">
 
-          {% for collection in product.collections %}
-            {% unless collection.handle == 'frontpage' %}
-              <li>
+          {% comment %}
+            Loop through each collection, except 'frontpage' and 'all'
+            Sort collections by handle
+          {% endcomment %}
+          {% assign sorted_collections = product.collections | sort: 'handle' %}
+          {% for collection in sorted_collections %}
+            {% unless collection.handle == 'frontpage' or collection.handle == 'all' %}
+              <li class="h5 small-cap">
                 <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ collection.title }}</a>
               </li>
             {% endunless %}

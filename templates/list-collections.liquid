@@ -13,6 +13,7 @@
 
 {% comment %}
   Loop through each collection, except 'frontpage' and 'all'
+  Sort collections by handle
 {% endcomment %}
 {% assign sorted_collections = collections | sort: 'handle' %}
 {% for collection in sorted_collections %}
