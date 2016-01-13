@@ -26,18 +26,16 @@
 
       {% if search.performed %}
         {% if search.results_count == 0 %}
-          <h2 class="text-center">{{ 'general.search.no_results_html' | t: terms: search.terms }}</h1>
-        {% else %}
-          <h2 class="text-center">{{ 'general.search.results_for_html' | t: terms: search.terms }}</h1>
+          <h2 class="text-center">{{ 'general.search.no_results_html' | t: terms: search.terms }}</h2>
         {% endif %}
       {% else %}
         <h2 class="text-center">{{ 'general.search.title' | t }}</h1>
       {% endif %}
 
       {% if search.performed %}
-
-        <hr class="hr--clear">
-
+        {% if search.results_count > 0 %}
+        <h3>{{ 'general.search.results_for_html' | t: terms: search.terms }}</h3>
+        {% endif %}
         <div class="grid-uniform">
           {% for product in search.results %}
 

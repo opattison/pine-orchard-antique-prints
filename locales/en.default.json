@@ -17,9 +17,9 @@
       "submit": "Subscribe"
     },
     "search": {
-      "no_results_html": "No products matched your search for <em>{{ terms }}</em>.",
-      "results_for_html": "Products that match your search <em>{{ terms }}</em>:",
-      "title": "Search for items in the shop",
+      "no_results_html": "No prints matched your search for “{{ terms }}”.",
+      "results_for_html": "Prints that match “{{ terms }}”:",
+      "title": "Search for prints in the shop",
       "placeholder": "Search the shop",
       "submit": "Search"
     }
