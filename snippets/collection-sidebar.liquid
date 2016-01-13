@@ -1,14 +1,11 @@
 <!-- /snippets/collection-sidebar.liquid -->
 
-<h3>More Collections</h3>
+<h3>Browse by Collection</h3>
 
 <ul class="no-bullets">
-{% for collection in collections %}
-  {% unless collection.handle == 'frontpage' %}
-    {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
-    <li>
-      <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ collection.title }}</a>
-    </li>
-  {% endunless %}
+
+{% for link in linklists.collection-menu.links %}
+  <li class="h5 small-cap">
+    <a href="{{ link.url }}" title="{{ 'link.title' }}">{{ link.title }}</a>
+  </li>
 {% endfor %}
-</ul>
