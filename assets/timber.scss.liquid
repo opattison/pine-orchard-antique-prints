@@ -173,10 +173,10 @@ $socialIconFontStack: 'icons';
 
 
 @mixin smcp {
-    -ms-font-feature-settings: 'smcp' on;
-   -moz-font-feature-settings: 'smcp' on;
--webkit-font-feature-settings: 'smcp' on;
-        font-feature-settings: 'smcp' on;
+    -ms-font-feature-settings: 'smcp' on, 'liga' off;
+   -moz-font-feature-settings: 'smcp' on, 'liga' off;
+-webkit-font-feature-settings: 'smcp' on, 'liga' off;
+        font-feature-settings: 'smcp' on, 'liga' off;
 }
 
 
@@ -809,7 +809,7 @@ select {
   line-height: 1.4;
   font-family: $bodyFontStack;
   color: $colorTextBody;
-  font-weight: $bodyFontMedium;
+  font-weight: $bodyFontRegular;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -894,7 +894,7 @@ em {
 }
 
 b, strong {
-  font-weight: bold;
+  font-weight: $bodyFontDemi;
 }
 
 small {
@@ -1261,7 +1261,7 @@ table.full {
 }
 
 th {
-  font-weight: bold;
+  font-weight: $bodyFontDemi;
 }
 
 th, td {
@@ -1548,7 +1548,7 @@ select {
 }
 
 optgroup {
-  font-weight: bold;
+  font-weight: $bodyFontDemi;
 }
 
 // Force option color (affects IE only)
@@ -1866,11 +1866,6 @@ label.error {
 .search-bar {
   max-width: 100%;
 
-  & input {
-    background-color: $colorBody;
-    border-color: $colorBody;
-  }
-
   @include at-query ($max, $medium) {
     margin-left: auto;
     margin-right: auto;
@@ -2061,7 +2056,7 @@ label.error {
 }
 
 .mobile-nav__item--active {
-  font-weight: bold;
+  font-weight: $bodyFontBold;
 }
 
 .mobile-nav__has-sublist {
@@ -2286,11 +2281,24 @@ label.error {
   font-weight: $bodyFontDemi;
 }
 
+
+.grid--list .grid__image {
+  height: 8em;
+
+  @include at-query ($min, $medium) {
+    height: 6em;
+  }
+}
+
+.grid--list .grid__item {
+  margin-bottom: ($gutter / 4);
+}
+
 /*============================================================================
   #Collection Filters
 ==============================================================================*/
 .filter--active {
-  font-weight: bold;
+  font-weight: $bodyFontDemi;
 }
 
 /*============================================================================

@@ -12,11 +12,13 @@
 {% include 'breadcrumb' %}
 
 {% comment %}
-  Loop through each collection, except 'frontpage'
+  Loop through each collection, except 'frontpage' and 'all'
+  Sort collections by handle
 {% endcomment %}
-{% for collection in collections %}
+{% assign sorted_collections = collections | sort: 'handle' %}
+{% for collection in sorted_collections %}
 
-  {% unless collection.handle == 'frontpage' %}
+  {% unless collection.handle == 'frontpage' or collection.handle == 'all' %}
 
     {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
 

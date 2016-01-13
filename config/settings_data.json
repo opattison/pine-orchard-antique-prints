@@ -3,7 +3,7 @@
   "presets": {
     "Default": {
       "ajax_cart_enable": true,
-      "cart_notes_enable": true,
+      "cart_notes_enable": false,
       "color_body_bg": "#eeeee7",
       "color_body_text": "#182905",
       "color_nav_bg": "#eeeee7",
@@ -15,11 +15,11 @@
       "color_button": "#9a3434",
       "color_primary": "#305309",
       "color_secondary": "#bbb",
-      "favicon_enable": false,
+      "favicon_enable": true,
       "footer_newsletter_enable": true,
-      "footer_social_enable": true, 
-      "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
-      "social_twitter_link": "https:\/\/twitter.com\/shopify"
+      "footer_social_enable": true,
+      "social_facebook_link": "https:\/\/www.facebook.com\/pineorchardprints",
+      "social_twitter_link": "https:\/\/twitter.com\/pineorchardprints"
     }
   }
 }
