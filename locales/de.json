@@ -237,7 +237,8 @@
     },
     "drawers": {
       "browse": "Durchsuchen",
-      "close_menu": "Menü schließen"
+      "close_menu": "Menü schließen",
+      "close": "schließen"
     },
     "cart": {
       "title": "Einkaufswagen",

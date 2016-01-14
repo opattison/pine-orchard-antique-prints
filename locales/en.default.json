@@ -237,7 +237,8 @@
     },
     "drawers": {
       "browse": "Browse",
-      "close_menu": "Close menu"
+      "close_menu": "Close menu",
+      "close": "Close"
     },
     "cart": {
       "title": "Cart",
