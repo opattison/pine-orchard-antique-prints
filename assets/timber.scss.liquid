@@ -83,18 +83,23 @@ $colorSecondary: {{ settings.color_secondary }};
 
 // Button colors
 $colorBtnPrimary: {{ settings.color_button }};
-$colorBtnPrimaryHover: darken($colorBtnPrimary, 10%);
-$colorBtnPrimaryActive: darken($colorBtnPrimaryHover, 10%);
+$colorBtnPrimaryHover: scale-color($colorBtnPrimary, $lightness: 20%);
+$colorBtnPrimaryActive: scale-color($colorBtnPrimaryHover, $lightness: 20%);
 $colorBtnPrimaryText: #fff;
 
 $colorBtnSecondary: $colorSecondary;
-$colorBtnSecondaryHover: darken($colorBtnSecondary, 10%);
-$colorBtnSecondaryActive: darken($colorBtnSecondaryHover, 10%);
+$colorBtnSecondaryHover: scale-color($colorBtnSecondary, $lightness: 20%);
+$colorBtnSecondaryActive: scale-color($colorBtnSecondaryHover, $lightness: 20%);
 $colorBtnSecondaryText: #fff;
+
+// Icon colors
+$colorIcon: $colorPrimary;
+$colorIconHover: scale-color($colorPrimary, $lightness: 20%);
+$colorIconDisabled: scale-color($colorIconHover, $saturation: -100%, $lightness: 20%);
 
 // Text link colors
 $colorLink: $colorPrimary;
-$colorLinkHover: lighten($colorPrimary, 15%);
+$colorLinkHover: scale-color($colorPrimary, $lightness: 20%);
 
 // Text colors
 $colorTextBody: {{ settings.color_body_text }};
@@ -1031,7 +1036,7 @@ hr {
   border: 1px solid $colorBorder;
   border-radius: $radius;
   padding: 0 5px;
-  height: 37px; // same as form elements
+  height: 40px;
   overflow: hidden;
 
   /*================ Only show on larger screens ================*/
@@ -1042,22 +1047,36 @@ hr {
 
 .change-view {
   display: block;
+  color: $colorBorder;
   background: none;
   border: 0 none;
   float: left;
-  padding: 10px 8px;
-  color: $colorBorder;
-  line-height: 1;
+  padding: 0 6px;
+  height: 40px;
 
   &:hover,
   &:focus {
     color: $colorPrimary;
   }
+
+  & svg {
+    cursor: pointer;
+    fill: $colorIcon;
+  }
+
+  & .svg-container {
+    height: 16px;
+    width: 16px;
+  }
 }
 
 .change-view--active {
   cursor: default;
-  color: $colorPrimary;
+
+  & svg {
+    cursor: default;
+    fill: $colorIconDisabled;
+  }
 }
 
 /*============================================================================
