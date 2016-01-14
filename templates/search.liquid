@@ -28,6 +28,7 @@
         {% if search.results_count == 0 %}
           <h2 class="text-center">{{ 'general.search.no_results_html' | t: terms: search.terms }}</h2>
         {% endif %}
+      {% elsif search.terms == '' %}
       {% else %}
         <h2 class="text-center">{{ 'general.search.title' | t }}</h1>
       {% endif %}
