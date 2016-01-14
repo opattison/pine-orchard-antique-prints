@@ -237,7 +237,8 @@
     },
     "drawers": {
       "browse": "Explorer",
-      "close_menu": "Fermer le menu"
+      "close_menu": "Fermer le menu",
+      "close": "Fermer"
     },
     "cart": {
       "title": "Panier",

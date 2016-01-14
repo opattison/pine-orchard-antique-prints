@@ -23,10 +23,7 @@
     {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
 
     <div class="section-header">
-      <h2 class="section-header__left"><a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ collection_title }}</a></h2>
-      <div class="section-header__right">
-        <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">More {{ collection_title }} &rsaquo;</a>
-      </div>
+      <h2 class="section-header__left"><a href="{{ collection.url }}" title="Browse {{ collection.title }}">{{ collection_title }}</a></h2>
     </div>
 
     <div class="grid">

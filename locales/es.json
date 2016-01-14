@@ -237,7 +237,8 @@
     },
     "drawers": {
       "browse": "Navegar",
-      "close_menu": "Cerrar menú"
+      "close_menu": "Cerrar menú",
+      "close": "Cerrar"
     },
     "cart": {
       "title": "Carrito",

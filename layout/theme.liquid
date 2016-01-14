@@ -57,11 +57,9 @@
 
   <div id="NavDrawer" class="drawer drawer--left">
     <div class="drawer__header">
-      <div class="drawer__title h3">{{ 'layout.drawers.browse' | t }}</div>
-      <div class="drawer__close js-drawer-close">
-        <button type="button" class="icon-fallback-text">
-          <span class="icon icon-x" aria-hidden="true"></span>
-          <span class="fallback-text">{{ 'layout.drawers.close_menu' | t }}</span>
+      <div class="drawer__close text-right js-drawer-close">
+        <button type="button" >
+          <strong>{{ 'layout.drawers.close' | t }}</strong>
         </button>
       </div>
     </div>
@@ -142,9 +140,8 @@
     <div class="drawer__header">
       <div class="drawer__title h3">{{ 'cart.general.title' | t }}</div>
       <div class="drawer__close js-drawer-close">
-        <button type="button" class="icon-fallback-text">
-          <span class="icon icon-x" aria-hidden="true"></span>
-          <span class="fallback-text">{{ 'cart.general.close_cart' | t | json }}</span>
+        <button type="button">
+          <strong>{{ 'layout.drawers.close' | t }}</strong>
         </button>
       </div>
     </div>
