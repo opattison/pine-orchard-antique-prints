@@ -133,7 +133,7 @@
           {% for collection in sorted_collections %}
             {% unless collection.handle == 'frontpage' or collection.handle == 'all' %}
               <li class="h5 small-cap">
-                <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ collection.title }}</a>
+                <a href="{{ collection.url }}" title="Browse {{ collection.title }}">{{ collection.title }}</a>
               </li>
             {% endunless %}
           {% endfor %}
