@@ -252,7 +252,7 @@
           <div class="grid">
             <div class="grid__item one-half">
               <div class="site-nav--mobile">
-                <button type="button" class="icon-fallback-text site-nav__link js-drawer-open-left" aria-controls="NavDrawer" aria-expanded="false">
+                <button type="button" class="site-nav__link js-drawer-open-left" aria-controls="NavDrawer" aria-expanded="false">
                   {{ 'layout.navigation.menu' | t }}
                 </button>
               </div>
@@ -283,19 +283,17 @@
             <div class="grid__item large--three-eighths medium--one-third small--text-center">
               <h3>{{ 'layout.footer.social_title' | t }}</h3>
                 <ul class="inline-list social-icons">
-                  {% if settings.social_twitter_link != blank %}
+                  {% if settings.social_twitter != blank %}
                     <li>
-                      <a class="icon-fallback-text" href="{{ settings.social_twitter_link }}" title="{{ shop.name }} on Twitter">
-                        <span class="icon icon-twitter" aria-hidden="true"></span>
-                        <span class="fallback-text">Twitter</span>
+                      <a href="http://twitter.com/{{ settings.social_twitter }}" title="{{ shop.name }} on Twitter">
+                        On Twitter: <strong>@{{ settings.social_twitter }}</strong>
                       </a>
                     </li>
                   {% endif %}
-                  {% if settings.social_facebook_link != blank %}
+                  {% if settings.social_facebook != blank %}
                     <li>
-                      <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook">
-                        <span class="icon icon-facebook" aria-hidden="true"></span>
-                        <span class="fallback-text">Facebook</span>
+                      <a href="https://www.facebook.com/{{ settings.social_facebook }}" title="{{ shop.name }} on Facebook">
+                        On Facebook: <strong>{{ settings.social_facebook }}</strong>
                       </a>
                     </li>
                   {% endif %}

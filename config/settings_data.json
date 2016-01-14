@@ -18,8 +18,8 @@
       "favicon_enable": true,
       "footer_newsletter_enable": true,
       "footer_social_enable": true,
-      "social_facebook_link": "https:\/\/www.facebook.com\/pineorchardprints",
-      "social_twitter_link": "https:\/\/twitter.com\/pineorchardprints"
+      "social_facebook": "pineorchardprints",
+      "social_twitter": "pineorchardprints"
     }
   }
 }
