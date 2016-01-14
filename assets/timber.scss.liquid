@@ -33,7 +33,6 @@
   #OOCSS Media Object
   #Images and Iframes
   #Forms
-  #Icons
   #Pagination
   #Site Header
   #Site Nav and Dropdowns
@@ -42,7 +41,6 @@
   #Site Footer
   #Product and Collection Grids
   #Collection Filters
-  #Breadcrumbs
   #Product Page
   #Notes and Form Feedback
   #Cart Page
@@ -2196,24 +2194,6 @@ label.error {
   font-weight: $bodyFontDemi;
 }
 
-/*============================================================================
-  #Breadcrumbs
-==============================================================================*/
-.breadcrumb {
-  margin-bottom: $gutter;
-
-  a,
-  span {
-    display: inline-block;
-    padding: 0 7px 0 0;
-    margin-right: 7px;
-
-    &:first-child {
-      padding-left: 0;
-    }
-  }
-}
-
 
 /*============================================================================
   #Product Page
@@ -2228,6 +2208,10 @@ label.error {
 
 .product-single__photos {
   margin-bottom: $gutter;
+
+  a {
+    cursor: zoom-in;
+  }
 }
 
 .product-single__photos,
@@ -2236,7 +2220,6 @@ label.error {
   align-items: center;
 
   a {
-    cursor: zoom-in;
     max-width: 100%;
   }
 

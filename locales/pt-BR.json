@@ -8,10 +8,6 @@
       "title": "404 Página não encontrada",
       "subtext_html": "A página que você solicitou não existe. Clique <a href=\"\/collections\/all\">aqui<\/a> para voltar às compras."
     },
-    "breadcrumbs": {
-      "home": "Início",
-      "home_link_title": "Voltar à \"Primeira Página\""
-    },
     "newsletter_form": {
       "newsletter_email": "e-mail@exemplo.com",
       "submit": "Inscrever"
