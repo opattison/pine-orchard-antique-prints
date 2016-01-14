@@ -241,7 +241,6 @@
 
             <div class="grid__item site-nav three-eighths text-right right">
               <a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
-                <span class="icon icon-cart" aria-hidden="true"></span>
                 {{ 'layout.cart.title' | t }} (<span id="CartCount">{{ cart.item_count }}</span> {{ 'layout.cart.items_count' | t: count: cart.item_count }} <span id="CartCost">{{ cart.total_price | money }}</span>)
               </a>
             </div>
