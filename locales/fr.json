@@ -8,10 +8,6 @@
       "title": "404 - Page non trouvée",
       "subtext_html": "Cette page n'est pas disponible. <a href=\"\/collections\/all\">Retourner au magasinage<\/a>"
     },
-    "breadcrumbs": {
-      "home": "Accueil",
-      "home_link_title": "Retour à la page d'accueil"
-    },
     "newsletter_form": {
       "newsletter_email": "courriel@exemple.com",
       "submit": "S'inscrire"

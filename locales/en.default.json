@@ -8,10 +8,6 @@
       "title": "404 Page Not Found",
       "subtext_html": "The page you requested does not exist. <br><br> <a class=\"btn\" href=\"\/collections\/all\">Continue shopping<\/a>"
     },
-    "breadcrumbs": {
-      "home": "Home",
-      "home_link_title": "Back to home"
-    },
     "newsletter_form": {
       "newsletter_email": "email@example.com",
       "submit": "Subscribe"
