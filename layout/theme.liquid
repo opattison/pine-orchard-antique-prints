@@ -81,13 +81,11 @@
             <div class="mobile-nav__has-sublist">
               <a href="{{ link.url }}" class="mobile-nav__link">{{ link.title }}</a>
               <div class="mobile-nav__toggle">
-                <button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-                  <span class="icon icon-plus" aria-hidden="true"></span>
-                  <span class="fallback-text">See More</span>
+                <button type="button" class="mobile-nav__toggle-open">
+                  +
                 </button>
-                <button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-                  <span class="icon icon-minus" aria-hidden="true"></span>
-                  <span class="fallback-text">{{ 'cart.general.close_cart' | t | json }}</span>
+                <button type="button" class="mobile-nav__toggle-close">
+                  −
                 </button>
               </div>
             </div>
