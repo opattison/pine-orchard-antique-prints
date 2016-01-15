@@ -31,17 +31,6 @@
     {% assign grid_item_width = 'large--one-quarter medium--one-half' %}
     {% include 'product-grid-item' %}
 
-  {% else %}
-    {% comment %}
-      For onboarding new users to your theme, we add some default products and onboarding tutorials to help populate their store
-    {% endcomment %}
-    {% unless emptyState %}
-      {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
-      {% assign emptyState = true %}
-    {% endunless %}
-
-    {% include 'onboarding-featured-products' %}
-
   {% endfor %}
 
 </div>
@@ -58,11 +47,8 @@
     Use an index variable in combination to the limit filter
     to account for the frontpage collection being in top six returned.
 
-    Use variable isEmpty to check if no collections will be shown.
-    For empty store demo only.
   {% endcomment %}
   {% assign index = 1 %}
-  {% assign isEmpty = true %}
 
   {% for collection in collections %}
 
