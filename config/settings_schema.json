@@ -1,146 +1,11 @@
 [
   {
-    "name": "theme_info",
-    "logo": "https:\/\/cdn.shopify.com\/s\/files\/1\/0070\/7032\/files\/2010_6_23_Shopify-Green_256x256.jpg",
+    "name": "Site",
     "settings": [
       {
         "type": "header",
-        "content": "Timber Framework"
-      },
-      {
-        "type": "paragraph",
-        "content": "v2.1.0"
-      },
-      {
-        "type": "paragraph",
-        "content": "Theme settings allow designers to provide an easy way for any user to customize the look and feel of their shop without having to delve into HTML or CSS code. Please see our [help page on theme settings](http:\/\/docs.shopify.com\/themes\/theme-templates\/settings) to learn more about how you can make the theme customizable."
-      },
-      {
-        "type": "paragraph",
-        "content": "Review [Timber's documentation](http:\/\/shopify.github.io\/Timber\/) for any development help."
-      }
-    ]
-  },
-  {
-    "name": "Colors",
-    "settings": [
-      {
-        "type": "paragraph",
-        "content": "Use class=\"color\" on a an input tag to bring up the color picker. Only a few colors have been included here as an example."
-      },
-      {
-        "type": "header",
-        "content": "General Colors"
-      },
-      {
-        "type": "color",
-        "id": "color_button",
-        "label": "Button Color",
-        "default": "#9a3434",
-        "info": "Used for primary buttons"
-      },
-      {
-        "type": "color",
-        "id": "color_primary",
-        "label": "Primary Color",
-        "default": "#204a80",
-        "info": "Used for text links"
-      },
-      {
-        "type": "color",
-        "id": "color_secondary",
-        "label": "Secondary Color",
-        "default": "#dcdcdc",
-        "info": "Used for secondary buttons"
-      },
-      {
-        "type": "color",
-        "id": "color_nav_bg",
-        "label": "Nav Background",
-        "default": "#f2f2f2"
-      },
-      {
-        "type": "color",
-        "id": "color_nav_text",
-        "label": "Nav Text",
-        "default": "#333333"
-      },
-      {
-        "type": "color",
-        "id": "color_body_bg",
-        "label": "Body Background",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "color_borders",
-        "label": "Border Colors",
-        "default": "#e5e5e5"
-      },
-      {
-        "type": "header",
-        "content": "Body Text"
-      },
-      {
-        "type": "color",
-        "id": "color_body_text",
-        "label": "Body Text",
-        "default": "#333333"
-      },
-      {
-        "type": "header",
-        "content": "Footer"
-      },
-      {
-        "type": "color",
-        "id": "color_footer_bg",
-        "label": "Footer Background",
-        "default": "#f2f2f2"
-      },
-      {
-        "type": "color",
-        "id": "color_footer_text",
-        "label": "Footer Text",
-        "default": "#636363"
-      },
-      {
-        "type": "color",
-        "id": "color_footer_social_link",
-        "label": "Social Icons",
-        "default": "#bbbbbb"
-      }
-    ]
-  },
-  {
-    "name": "Header",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Logo"
-      },
-      {
-        "type": "checkbox",
-        "id": "logo_use_image",
-        "label": "Use Custom Logo"
-      },
-      {
-        "type": "image",
-        "id": "logo.png",
-        "label": "Custom Logo",
-        "max-width": 450,
-        "max-height": 200,
-        "info": "Maximum logo dimensions are 450px wide by 200px high. The uploaded file will be resized to fit within those constraints."
-      },
-      {
-        "type": "text",
-        "id": "logo_max_width",
-        "label": "Max Logo Width",
-        "default": "450",
-        "info": "Defined in pixels. Do not add the 'px' unit."
-      },
-      {
-        "type": "header",
-        "content": "Favicon"
+        "content": "Favicon",
+        "info": "A favicon is the image that appears next to the site’s title name in some browsers, or attached to a bookmark."
       },
       {
         "type": "checkbox",
@@ -150,19 +15,19 @@
       {
         "type": "image",
         "id": "favicon.png",
-        "label": "16px x 16px png",
-        "max-width": 16,
-        "max-height": 16
+        "label": "32px x 32px png",
+        "max-width": 32,
+        "max-height": 32
       }
     ]
   },
   {
-    "name": "Footer",
+    "name": "Contact",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "footer_social_enable",
-        "label": "Show social media links"
+        "type": "text",
+        "id": "email_public",
+        "label": "Public email address"
       },
       {
         "type": "text",
@@ -173,6 +38,102 @@
         "type": "text",
         "id": "social_facebook",
         "label": "Facebook handle"
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General Colors"
+      },
+      {
+        "type": "color",
+        "id": "color_button",
+        "label": "Button Color",
+        "info": "Used for primary buttons"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary Color",
+        "info": "Used for text links"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Secondary Color",
+        "info": "Used for secondary buttons"
+      },
+      {
+        "type": "color",
+        "id": "color_nav_bg",
+        "label": "Nav Background"
+      },
+      {
+        "type": "color",
+        "id": "color_nav_text",
+        "label": "Nav Text"
+      },
+      {
+        "type": "color",
+        "id": "color_body_bg",
+        "label": "Body Background"
+      },
+      {
+        "type": "color",
+        "id": "color_borders",
+        "label": "Border Colors"
+      },
+      {
+        "type": "header",
+        "content": "Body Text"
+      },
+      {
+        "type": "color",
+        "id": "color_body_text",
+        "label": "Body Text"
+      },
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_bg",
+        "label": "Footer Background"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_text",
+        "label": "Footer Text"
+      }
+    ]
+  },
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Banner",
+        "info": "The banner image appears on all pages on the site. Maxiumum dimensions are 1440 by 288."
+      },
+      {
+        "type": "image",
+        "id": "header_image.jpg",
+        "max-width": 1440,
+        "max-height": 288
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "footer_social_enable",
+        "label": "Show social media links"
       },
       {
         "type": "checkbox",
@@ -188,7 +149,7 @@
     ]
   },
   {
-    "name": "Cart Page",
+    "name": "Shopping Cart",
     "settings": [
       {
         "type": "checkbox",
@@ -203,19 +164,14 @@
       {
         "type": "checkbox",
         "id": "ajax_cart_enable",
-        "label": "Enable Ajax Cart Drawer",
+        "label": "Enable cart drawer interface",
         "info": "[View Documentation](http:\/\/shopify.com\/timber#ajax-cart)"
-      }
-    ]
-  },
-  {
-    "name": "Social Sharing",
-    "settings": [
+      },
       {
         "type": "text",
-        "id": "twittercard_handle",
-        "label": "Twitter Handle",
-        "default": "@"
+        "id": "bulk_discount",
+        "label": "Bulk discount code for more than two items",
+        "info": "Match to code on [Discounts page](https:\/\/pine-orchard-prints.myshopify.com\/admin\/discounts)"
       }
     ]
   }

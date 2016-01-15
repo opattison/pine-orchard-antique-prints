@@ -5,8 +5,8 @@
       "page": "Page {{ page }}"
     },
     "404": {
-      "title": "404 Page Not Found",
-      "subtext_html": "The page you requested does not exist. <br><br> <a class=\"btn\" href=\"\/collections\/all\">Continue shopping<\/a>"
+      "title": "Error: 404 Page Not Found",
+      "subtext_html": "The page you requested does not exist. <a href=\"mailto:keith@pineorchardprints.com\">Let me know<\/a> if I can help you find something you’re looking for. <br><br> <a class=\"btn\" href=\"\/collections\/all\">Continue shopping<\/a>"
     },
     "newsletter_form": {
       "newsletter_email": "email@example.com",
@@ -93,11 +93,6 @@
       "price_descending": "Price, high to low",
       "date_descending": "Date, new to old",
       "date_ascending": "Date, old to new"
-    },
-    "onboarding": {
-      "modal_title": "This page will show all of your store's items",
-      "no_products_html": "There are no items yet, but once you begin adding them they will show up here regardless if they are in a collection.",
-      "add_product": "Add Product"
     }
   },
   "contact": {
@@ -216,15 +211,6 @@
       "frontpage_title": "Featured items",
       "featured_title": "Collections",
       "news_title": "Latest News"
-    },
-    "onboarding": {
-      "modal_title": "Almost there...",
-      "no_products_html": "You have no items in your Frontpage collection. This placeholder will appear until you <a href=\"\/admin\/collections?tutorial=Frontpage\">add a product to this collection<\/a>.",
-      "add_product": "Add a Product",
-      "product_title": "Example Product Title",
-      "no_collections_html": "You don't have any collections to show here. <a href=\"\/admin\/custom_collections\">Add some collections<\/a> to go along with the default Frontpage.",
-      "add_collection": "Add a Collection",
-      "collection_title": "Example Collection Title"
     }
   },
   "layout": {

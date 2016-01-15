@@ -1,8 +1,9 @@
 {
-  "current": "Default",
+  "current": "Pine Orchard",
   "presets": {
-    "Default": {
+    "Pine Orchard": {
       "ajax_cart_enable": true,
+      "bulk_discount": "two-item-discount-20150106",
       "cart_notes_enable": false,
       "color_body_bg": "#eeeee7",
       "color_body_text": "#182905",
@@ -15,9 +16,11 @@
       "color_button": "#9a3434",
       "color_primary": "#305309",
       "color_secondary": "#5c5c5c",
+      "email_public": "keith@pineorchardprints.com",
       "favicon_enable": true,
       "footer_newsletter_enable": true,
       "footer_social_enable": true,
+      "newsletter_form_action": "//pineorchardprints.us12.list-manage.com/subscribe/post?u=e52e4d702a703782e614c91dd&amp;id=da7a8d6a64",
       "social_facebook": "pineorchardprints",
       "social_twitter": "pineorchardprints"
     }
