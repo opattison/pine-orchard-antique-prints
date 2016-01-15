@@ -4,13 +4,13 @@
     "settings": [
       {
         "type": "header",
-        "content": "Favicon"
+        "content": "Favicon",
+        "info": "A favicon is the image that appears next to the site’s title name in some browsers, or attached to a bookmark."
       },
       {
         "type": "checkbox",
         "id": "favicon_enable",
-        "label": "Use custom icon?",
-        "info": "A favicon is the image that appears next to the site’s title name in some browsers, or attached to a bookmark."
+        "label": "Use custom icon?"
       },
       {
         "type": "image",
@@ -108,6 +108,22 @@
         "type": "color",
         "id": "color_footer_text",
         "label": "Footer Text"
+      }
+    ]
+  },
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Banner",
+        "info": "The banner image appears on all pages on the site. Maxiumum dimensions are 1440 by 288."
+      },
+      {
+        "type": "image",
+        "id": "header_image.jpg",
+        "max-width": 1440,
+        "max-height": 288
       }
     ]
   },
