@@ -5,8 +5,8 @@
       "page": "Page {{ page }}"
     },
     "404": {
-      "title": "404 Page Not Found",
-      "subtext_html": "The page you requested does not exist. <br><br> <a class=\"btn\" href=\"\/collections\/all\">Continue shopping<\/a>"
+      "title": "Error: 404 Page Not Found",
+      "subtext_html": "The page you requested does not exist. <a href=\"mailto:keith@pineorchardprints.com\">Let me know<\/a> if I can help you find something you’re looking for. <br><br> <a class=\"btn\" href=\"\/collections\/all\">Continue shopping<\/a>"
     },
     "newsletter_form": {
       "newsletter_email": "email@example.com",
