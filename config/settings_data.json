@@ -2,7 +2,7 @@
   "current": "Pine Orchard",
   "presets": {
     "Pine Orchard": {
-      "ajax_cart_enable": true,
+      "ajax_cart_enable": false,
       "bulk_discount": "two-item-discount-20150106",
       "cart_notes_enable": false,
       "color_body_bg": "#eeeee7",

@@ -1,11 +1,4 @@
 <!-- /templates/cart.liquid -->
-{% comment %}
-
-  For info on test orders:
-    - General http://docs.shopify.com/manual/your-store/orders/test-orders
-    - Shopify Payments - http://docs.shopify.com/manual/more/shopify-payments/testing-shopify-payments
-
-{% endcomment %}
 
 {% if cart.item_count > 0 %}
 
@@ -100,6 +93,9 @@
         </p>
         <p><em>{{ 'cart.general.shipping_at_checkout' | t }}</em></p>
         <input type="submit" name="update" class="btn--secondary update-cart" value="{{ 'cart.general.update' | t }}">
+        {% if cart.item_count >= 2 %}
+          <input type="hidden" name="discount" value="two-item-discount-20150106"/>
+        {% endif %}
         <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
       </div>
     </div>
