@@ -128,7 +128,7 @@ $successGreenBg: #ecfef0;
 // Drawers
 $drawerNavWidth: 300px;
 $drawerCartWidth: 300px;
-$colorDrawers: scale-color($colorBody, $lightness: 15%);
+$colorDrawers: scale-color($colorBody, $lightness: 40%);
 $colorDrawerBorder: $colorBody;
 $colorDrawerText: $colorTextBody;
 $drawerTransition: all 200ms cubic-bezier(0.46, 0.01, 0.32, 1);
@@ -161,6 +161,13 @@ $bodyFontMedium: 500;
 $bodyFontDemi: 600;
 $bodyFontBold: 700;
 $baseFontSize: 16px; // Henceforth known as 1em
+
+@mixin liga {
+    -ms-font-feature-settings: 'liga' on;
+   -moz-font-feature-settings: 'liga' on;
+-webkit-font-feature-settings: 'liga' on;
+        font-feature-settings: 'liga' on;
+}
 
 @mixin smcp {
     -ms-font-feature-settings: 'smcp' on, 'liga' off;
@@ -808,6 +815,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $headerFontStack;
   font-weight: $headerFontRegular;
   margin: 0 0 0.5em;
+  @include liga;
 
   a {
     text-decoration: none;
@@ -1104,7 +1112,7 @@ hr {
 
 figcaption {
   font-size: em(12px);
-  font-weight: 500;
+  font-weight: $bodyFontMedium;
 }
 
 .page__push-left {
@@ -1185,6 +1193,12 @@ html input[disabled] {
     color: $disabledBorder;
     background-color: $disabledGrey;
   }
+
+  &.is-added {
+    cursor: default !important;
+    color: $disabledBorder !important;
+    background-color: $disabledGrey !important;
+  }
 }
 
 .btn--secondary,
@@ -1204,8 +1218,27 @@ html input[disabled] {
   }
 }
 
+.btn--tertiary,
+.rte .btn--tertiary {
+  @extend .btn;
+  border: 1px solid $colorBtnSecondary;
+  background-color: transparent;
+  color: $colorBtnSecondary;
+
+  &:hover {
+    background-color: $colorBtnSecondary;
+    color: $colorBtnSecondaryText;
+  }
+
+  &:active,
+  &:focus {
+   background-color: $colorBtnSecondaryActive;
+   color: $colorBtnSecondaryText;
+  }
+}
+
 .btn--small {
-  padding: 4px 5px;
+  padding: 2px 8px;
   font-size: em(12px);
 }
 
@@ -1318,23 +1351,17 @@ th, td {
     th,
     td {
       display: block;
-      text-align: right;
-      padding: 15px;
+      padding: $gutter / 2;
     }
 
     td:before {
       content: attr(data-label);
-      float: left;
-      text-align: center;
-      font-size: 12px;
-      padding-right: 10px;
+      display: block;
+      font-weight: $bodyFontMedium;
+      padding: 0 $gutter / 4 $gutter / 4 0;
     }
 
     &.cart-table {
-      img {
-        margin: 0 auto;
-      }
-
       .js-qty {
         float: right;
       }
@@ -1351,16 +1378,6 @@ th, td {
     position: relative;
     margin-top: 10px;
     padding-top: 15px;
-
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 15px;
-      right: 15px;
-      border-bottom: 1px solid $colorBorder;
-    }
   }
 }
 
@@ -1711,7 +1728,7 @@ label.error {
 
   a {
     display: block;
-    font-weight: 500;
+    font-weight: $bodyFontMedium;
   }
 
   a,
@@ -2105,21 +2122,6 @@ label.error {
   }
 }
 
-.drawer--right {
-  width: $drawerCartWidth;
-  right: -$drawerCartWidth;
-  border-left: 1px solid $colorDrawerBorder;
-
-  .js-drawer-open-right & {
-    display: block;
-    @include transform(translateX(-$drawerCartWidth));
-
-    .lt-ie9 & {
-      right: 0;
-    }
-  }
-}
-
 #PageContainer {
   overflow: hidden;
 }
@@ -2130,10 +2132,6 @@ label.error {
 
   .js-drawer-open-left & {
     @include transform(translateX($drawerNavWidth));
-  }
-
-  .js-drawer-open-right & {
-    @include transform(translateX(-$drawerCartWidth));
   }
 }
 
@@ -2158,20 +2156,15 @@ label.error {
 .drawer__close {
   width: 1%;
   text-align: center;
-  font-size: em(18px);
 }
 
 .drawer__close button {
   position: relative;
-  right: -20px;
-  height: 100%;
-  padding: 0 20px;
+  height: auto;
+  padding: 6px 14px;
   color: inherit;
+  font-size: em(18px);
 
-  &:active,
-  &:focus {
-    background-color: darken($colorDrawers, 5%);
-  }
 }
 
 /*============================================================================
@@ -2399,7 +2392,7 @@ label.error {
   position: relative;
   margin-top: $gutter;
   padding-top: $gutter;
-  border-top: 1px solid $colorBorder;
+  border-bottom: 1px solid $colorBorder;
 
   &:first-child {
     margin-top: 0;
@@ -2416,13 +2409,25 @@ label.error {
 
 .cart-table {
   th {
-    font-weight: normal;
+    font-weight: $bodyFontMedium;
   }
 
   td,
   th {
-    padding: 30px 15px;
+    padding: $gutter / 2 $gutter / 2 $gutter / 2 0;
     border: none;
+    min-width: 6em;
+  }
+
+  td:last-child {
+    padding-right: 0;
+  }
+
+  @include at-query ($max, $small) {
+    td {
+      padding-top: 0;
+      padding-bottom: $gutter / 4;
+    }
   }
 }
 
@@ -2449,11 +2454,6 @@ label.error {
   }
 }
 
-.cart__subtotal {
-  margin: 0 0 0 ($gutter / 3);
-  display: inline;
-}
-
 .cart__mini-labels {
   display: block;
   margin: ($gutter / 3) 0;
@@ -2464,8 +2464,23 @@ label.error {
   }
 }
 
+.cart__item-price {
+  font-weight: $bodyFontDemi;
+}
+
 .cart__remove {
-  display: block;
+  margin-top: ($gutter / 2);
+}
+
+.cart__subtotal-title {
+  display: inline-block;
+  font-weight: $bodyFontMedium;
+}
+
+.cart__subtotal {
+  margin: ($gutter / 2) 0 ($gutter / 2) ($gutter / 4);
+  display: inline-block;
+  font-weight: $bodyFontDemi;
 }
 
 /*============================================================================
@@ -2574,35 +2589,13 @@ label.error {
   border-right: 1px solid $colorBorder;
 }
 
-/*================ Quantity Selectors in Ajax Cart ================*/
-.ajaxcart__qty {
-  @extend .js-qty;
-  margin: 0;
+/*================ Remove Selector in Ajax Cart ================*/
 
-  .is-loading & {
-    opacity: 0.5;
-    transition: none;
-  }
-}
-
-.ajaxcart__qty-num {
-  border-color: $colorDrawerBorder;
-  color: $colorDrawerText;
-}
-
-.ajaxcart__qty-adjust {
-  @extend .js-qty__adjust;
-  color: $colorDrawerText;
-}
-
-.ajaxcart__qty--plus {
-  @extend .js-qty__adjust--plus;
-  border-color: $colorDrawerBorder;
-}
-
-.ajaxcart__qty--minus {
-  @extend .js-qty__adjust--minus;
-  border-color: $colorDrawerBorder;
+.ajaxcart__qty--remove {
+  padding: 2px 8px;
+  position: relative;
+  min-height: 24px;
+  font-size: em(12px);
 }
 
 {% endif %} // settings.ajax_cart_enable

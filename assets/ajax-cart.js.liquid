@@ -145,7 +145,7 @@ var ajaxCart = (function(module, $) {
   var settings, isUpdating, $body;
 
   // Private plugin variables
-  var $formContainer, $addToCart, $cartCountSelector, $cartCostSelector, $cartContainer, $drawerContainer;
+  var $formContainer, $addToCart, $cartCountSelector, $cartCostSelector, $cartContainer, $drawerContainer, $addToCartText;
 
   // Private functions
   var updateCountPrice, formOverride, itemAddedCallback, itemErrorCallback, cartUpdateCallback, buildCart, cartCallback, adjustCart, adjustCartCallback, createQtySelectors, qtySelectors, validateQty;
@@ -164,7 +164,8 @@ var ajaxCart = (function(module, $) {
       cartCostSelector   : null,
       moneyFormat        : '${{amount}}',
       disableAjaxCart    : false,
-      enableQtySelectors : true
+      enableQtySelectors : true,
+      addToCartText      : '#AddToCartText'
     };
 
     // Override defaults with arguments
@@ -176,6 +177,7 @@ var ajaxCart = (function(module, $) {
     $addToCart         = $formContainer.find(settings.addToCartSelector);
     $cartCountSelector = $(settings.cartCountSelector);
     $cartCostSelector  = $(settings.cartCostSelector);
+    $addToCartText     = $(settings.addToCartText)
 
     // General Selectors
     $body = $('body');
@@ -232,16 +234,20 @@ var ajaxCart = (function(module, $) {
   itemAddedCallback = function (product) {
     $addToCart.removeClass('is-adding').addClass('is-added');
 
+    $addToCartText.text('Added to Cart');
+
     ShopifyAPI.getCart(cartUpdateCallback);
   };
 
   itemErrorCallback = function (XMLHttpRequest, textStatus) {
     var data = eval('(' + XMLHttpRequest.responseText + ')');
-    $addToCart.removeClass('is-adding is-added');
+    $addToCart.removeClass('is-adding').addClass('is-added');
+
+    $addToCartText.text('Already in Cart');
 
     if (!!data.message) {
       if (data.status == 422) {
-        $formContainer.after('<div class="errors qty-error">'+ data.description +'</div>')
+        $formContainer.after('<div class="errors qty-error">This item has already been added to your cart. Each print is unique!</div>')
       }
     }
   };

@@ -152,11 +152,6 @@
       },
       {
         "type": "checkbox",
-        "id": "cart_vendor_enable",
-        "label": "Show product vendor"
-      },
-      {
-        "type": "checkbox",
         "id": "ajax_cart_enable",
         "label": "Enable cart drawer interface",
         "info": "[View Documentation](http:\/\/shopify.com\/timber#ajax-cart)"
