@@ -41,23 +41,16 @@
 
 <div class="grid-uniform">
 
-  {% comment %}
-    Show six collections, unless it's 'frontpage'.
+  {% assign homepage_collections = settings.homepage_collections %}
+  {% assign sorted_collections = collections | sort: 'handle' %}
 
-    Use an index variable in combination to the limit filter
-    to account for the frontpage collection being in top six returned.
+  {% for collection in sorted_collections %}
 
-  {% endcomment %}
-  {% assign index = 1 %}
+      {% if homepage_collections contains collection.handle %}
 
-  {% for collection in collections %}
+        {% include 'collection-grid-item' %}
 
-      {% unless collection.handle == 'frontpage' %}
-
-          {% include 'collection-grid-item' %}
-
-        {% assign index = index | plus: 1 %}
-      {% endunless %}
+      {% endif %}
 
   {% endfor %}
 

@@ -4,18 +4,12 @@
     "settings": [
       {
         "type": "header",
-        "content": "Favicon",
-        "info": "A favicon is the image that appears next to the site’s title name in some browsers, or attached to a bookmark."
-      },
-      {
-        "type": "checkbox",
-        "id": "favicon_enable",
-        "label": "Use custom icon?"
+        "content": "Favicon"
       },
       {
         "type": "image",
         "id": "favicon.png",
-        "label": "32px x 32px png",
+        "label": "A favicon is the image that appears next to the site’s title name in some browsers, or attached to a bookmark. The default size is 32px by 32px.",
         "max-width": 32,
         "max-height": 32
       }
@@ -138,7 +132,7 @@
       {
         "type": "checkbox",
         "id": "footer_newsletter_enable",
-        "label": "Show Newsletter Field"
+        "label": "Show newsletter field"
       },
       {
         "type": "text",
