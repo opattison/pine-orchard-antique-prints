@@ -162,6 +162,13 @@ $bodyFontDemi: 600;
 $bodyFontBold: 700;
 $baseFontSize: 16px; // Henceforth known as 1em
 
+@mixin liga {
+    -ms-font-feature-settings: 'liga' on;
+   -moz-font-feature-settings: 'liga' on;
+-webkit-font-feature-settings: 'liga' on;
+        font-feature-settings: 'liga' on;
+}
+
 @mixin smcp {
     -ms-font-feature-settings: 'smcp' on, 'liga' off;
    -moz-font-feature-settings: 'smcp' on, 'liga' off;
@@ -808,6 +815,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $headerFontStack;
   font-weight: $headerFontRegular;
   margin: 0 0 0.5em;
+  @include liga;
 
   a {
     text-decoration: none;
