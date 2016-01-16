@@ -1101,6 +1101,20 @@ hr {
   margin-bottom: 0;
 }
 
+figcaption {
+  font-size: em(12px);
+  font-weight: 500;
+}
+
+.page__push-left {
+
+  @include at-query($min, $medium) {
+    float: left;
+    margin-left: calc(-100%*2/3);
+    max-width: 50%;
+  }
+}
+
 /*============================================================================
   #Links and Buttons
 ==============================================================================*/
