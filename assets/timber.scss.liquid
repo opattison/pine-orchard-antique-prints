@@ -1716,7 +1716,7 @@ label.error {
 
   a,
   .page.current {
-    padding: $gutter / 8;
+    padding: 1px;
   }
 
   .page.current {
@@ -1724,9 +1724,24 @@ label.error {
     font-weight: 700;
   }
 
+  @include at-query ($min, $small) {
+    a,
+    .page.current {
+      padding: $gutter / 6;
+    }
+  }
+
   @include at-query ($min, $large) {
     max-width: 70%;
   }
+}
+
+.prev {
+  float: left;
+}
+
+.next {
+  float: right;
 }
 
 /*============================================================================

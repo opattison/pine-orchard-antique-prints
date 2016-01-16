@@ -149,12 +149,12 @@
         {% if collection.previous_product or collection.next_product %}
           <p>
             {% if collection.previous_product %}
-              <span class="left">
+              <span class="prev">
                 {{ 'products.general.previous_product_html' | t | link_to: collection.previous_product }}
               </span>
             {% endif %}
             {% if collection.next_product %}
-              <span class="right">
+              <span class="next">
                 {{ 'products.general.next_product_html' | t | link_to: collection.next_product }}
               </span>
             {% endif %}
