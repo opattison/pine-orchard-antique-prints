@@ -36,11 +36,11 @@
                 <div class="grid--full display-table">
                   <div class="grid__item display-table-cell one-half">
                     <div class="ajaxcart__qty">
-                      <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus" data-id="{{id}}" data-qty="{{itemMinus}}" data-line="{{line}}">
-                        −
+                      <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus ajaxcart__qty--remove btn--tertiary" data-id="{{id}}" data-qty="{{itemMinus}}" data-line="{{line}}">
+                        remove
                       </button>
-                      <input type="text" name="updates[]" class="ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{id}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*">
-                      <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus" data-id="{{id}}" data-line="{{line}}" data-qty="{{itemAdd}}">
+                      <input type="text" name="updates[]" class="ajaxcart__qty-num visually-hidden" value="{{itemQty}}" min="0" data-id="{{id}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*">
+                      <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus visually-hidden" data-id="{{id}}" data-line="{{line}}" data-qty="{{itemAdd}}">
                         +
                       </button>
                     </div>
