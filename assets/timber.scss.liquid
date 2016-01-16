@@ -50,7 +50,7 @@
 /*============================================================================
   #Breakpoint and Grid Variables
 ==============================================================================*/
-$viewportIncrement: 1px;
+$viewportIncrement: 10px;
 
 $small: 480px;
 $medium: 800px;
@@ -59,6 +59,7 @@ $large: 801px;
 $postSmall: $small + $viewportIncrement;
 $preMedium: $medium - $viewportIncrement;
 $preLarge: $large - $viewportIncrement;
+$postLarge: $large + ($viewportIncrement * 10);
 
 /*================ The following are dependencies of csswizardry grid ================*/
 $breakpoints: (
@@ -1697,8 +1698,11 @@ label.error {
   #Pagination
 ==============================================================================*/
 .pagination {
-  margin-bottom: 1em;
+  margin: 1em auto 2em;
   text-align: center;
+  border: 1px solid $colorBorder;
+  padding: $gutter / 4;
+  border-radius: $radius;
 
   > span {
     display: inline-block;
@@ -1707,11 +1711,21 @@ label.error {
 
   a {
     display: block;
+    font-weight: 500;
   }
 
   a,
   .page.current {
-    padding: 8px;
+    padding: $gutter / 8;
+  }
+
+  .page.current {
+    color: $colorIconDisabled;
+    font-weight: 700;
+  }
+
+  @include at-query ($min, $large) {
+    max-width: 70%;
   }
 }
 
