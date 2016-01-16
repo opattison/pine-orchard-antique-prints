@@ -1112,7 +1112,7 @@ hr {
 
 figcaption {
   font-size: em(12px);
-  font-weight: 500;
+  font-weight: $bodyFontMedium;
 }
 
 .page__push-left {
@@ -1192,6 +1192,12 @@ html input[disabled] {
     cursor: default;
     color: $disabledBorder;
     background-color: $disabledGrey;
+  }
+
+  &.is-added {
+    cursor: default !important;
+    color: $disabledBorder !important;
+    background-color: $disabledGrey !important;
   }
 }
 
@@ -1345,23 +1351,17 @@ th, td {
     th,
     td {
       display: block;
-      text-align: right;
-      padding: 15px;
+      padding: $gutter / 2;
     }
 
     td:before {
       content: attr(data-label);
-      float: left;
-      text-align: center;
-      font-size: 12px;
-      padding-right: 10px;
+      display: block;
+      font-weight: $bodyFontMedium;
+      padding: 0 $gutter / 4 $gutter / 4 0;
     }
 
     &.cart-table {
-      img {
-        margin: 0 auto;
-      }
-
       .js-qty {
         float: right;
       }
@@ -1378,16 +1378,6 @@ th, td {
     position: relative;
     margin-top: 10px;
     padding-top: 15px;
-
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 15px;
-      right: 15px;
-      border-bottom: 1px solid $colorBorder;
-    }
   }
 }
 
@@ -1738,7 +1728,7 @@ label.error {
 
   a {
     display: block;
-    font-weight: 500;
+    font-weight: $bodyFontMedium;
   }
 
   a,
@@ -2081,10 +2071,6 @@ label.error {
 /*============================================================================
   #Drawers
 ==============================================================================*/
-.js-drawer-open {
-  overflow: hidden;
-  height: 100%;
-}
 
 .drawer {
   @include promote-layer();
@@ -2157,10 +2143,6 @@ label.error {
 
   .js-drawer-open-left & {
     @include transform(translateX($drawerNavWidth));
-  }
-
-  .js-drawer-open-right & {
-    @include transform(translateX(-$drawerCartWidth));
   }
 }
 
@@ -2421,7 +2403,7 @@ label.error {
   position: relative;
   margin-top: $gutter;
   padding-top: $gutter;
-  border-top: 1px solid $colorBorder;
+  border-bottom: 1px solid $colorBorder;
 
   &:first-child {
     margin-top: 0;
@@ -2438,13 +2420,25 @@ label.error {
 
 .cart-table {
   th {
-    font-weight: normal;
+    font-weight: $bodyFontMedium;
   }
 
   td,
   th {
-    padding: 30px 15px;
+    padding: $gutter / 2 $gutter / 2 $gutter / 2 0;
     border: none;
+    min-width: 6em;
+  }
+
+  td:last-child {
+    padding-right: 0;
+  }
+
+  @include at-query ($max, $small) {
+    td {
+      padding-top: 0;
+      padding-bottom: $gutter / 4;
+    }
   }
 }
 
@@ -2471,11 +2465,6 @@ label.error {
   }
 }
 
-.cart__subtotal {
-  margin: 0 0 0 ($gutter / 3);
-  display: inline;
-}
-
 .cart__mini-labels {
   display: block;
   margin: ($gutter / 3) 0;
@@ -2486,8 +2475,23 @@ label.error {
   }
 }
 
+.cart__item-price {
+  font-weight: $bodyFontDemi;
+}
+
 .cart__remove {
-  display: block;
+  margin-top: ($gutter / 2);
+}
+
+.cart__subtotal-title {
+  display: inline-block;
+  font-weight: $bodyFontMedium;
+}
+
+.cart__subtotal {
+  margin: ($gutter / 2) 0 ($gutter / 2) ($gutter / 4);
+  display: inline-block;
+  font-weight: $bodyFontDemi;
 }
 
 /*============================================================================
