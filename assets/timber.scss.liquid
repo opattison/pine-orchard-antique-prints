@@ -50,7 +50,7 @@
 /*============================================================================
   #Breakpoint and Grid Variables
 ==============================================================================*/
-$viewportIncrement: 1px;
+$viewportIncrement: 10px;
 
 $small: 480px;
 $medium: 800px;
@@ -59,6 +59,7 @@ $large: 801px;
 $postSmall: $small + $viewportIncrement;
 $preMedium: $medium - $viewportIncrement;
 $preLarge: $large - $viewportIncrement;
+$postLarge: $large + ($viewportIncrement * 10);
 
 /*================ The following are dependencies of csswizardry grid ================*/
 $breakpoints: (
@@ -127,9 +128,9 @@ $successGreenBg: #ecfef0;
 // Drawers
 $drawerNavWidth: 300px;
 $drawerCartWidth: 300px;
-$colorDrawers: #f6f6f6;
-$colorDrawerBorder: darken($colorDrawers, 5%);
-$colorDrawerText: #333;
+$colorDrawers: scale-color($colorBody, $lightness: 15%);
+$colorDrawerBorder: $colorBody;
+$colorDrawerText: $colorTextBody;
 $drawerTransition: all 200ms cubic-bezier(0.46, 0.01, 0.32, 1);
 
 // Sizing variables
@@ -949,7 +950,7 @@ pre {
 /*================ Horizontal Rules ================*/
 hr {
   clear: both;
-  border-top: solid $colorPrimary;
+  border-top: solid $colorBorder;
   border-width: 1px 0 0;
   margin: $gutter 0;
   height: 0;
@@ -1099,6 +1100,20 @@ hr {
 
 .rte--header {
   margin-bottom: 0;
+}
+
+figcaption {
+  font-size: em(12px);
+  font-weight: 500;
+}
+
+.page__push-left {
+
+  @include at-query($min, $medium) {
+    float: left;
+    margin-left: 60%;
+    max-width: 50%;
+  }
 }
 
 /*============================================================================
@@ -1683,8 +1698,11 @@ label.error {
   #Pagination
 ==============================================================================*/
 .pagination {
-  margin-bottom: 1em;
+  margin: 1em auto 2em;
   text-align: center;
+  border: 1px solid $colorBorder;
+  padding: $gutter / 4;
+  border-radius: $radius;
 
   > span {
     display: inline-block;
@@ -1693,12 +1711,37 @@ label.error {
 
   a {
     display: block;
+    font-weight: 500;
   }
 
   a,
   .page.current {
-    padding: 8px;
+    padding: 1px;
   }
+
+  .page.current {
+    color: $colorIconDisabled;
+    font-weight: 700;
+  }
+
+  @include at-query ($min, $small) {
+    a,
+    .page.current {
+      padding: $gutter / 6;
+    }
+  }
+
+  @include at-query ($min, $large) {
+    max-width: 70%;
+  }
+}
+
+.prev {
+  float: left;
+}
+
+.next {
+  float: right;
 }
 
 /*============================================================================
@@ -2160,8 +2203,9 @@ label.error {
   background-size: cover;
   background-position: center;
   height: 8em;
+  margin-bottom: $gutter / 4;
 
-  @include at-query ($min, $medium) {
+  @include at-query ($min, $small) {
     height: 10em;
   }
 
@@ -2178,13 +2222,40 @@ label.error {
 .grid--list .grid__image {
   height: 8em;
 
-  @include at-query ($min, $medium) {
+  @include at-query ($min, $small) {
     height: 6em;
   }
 }
 
 .grid--list .grid__item {
   margin-bottom: ($gutter / 4);
+}
+
+.grid--collections {
+
+  .grid__image {
+    height: 9em;
+
+    @include at-query ($min, $small) {
+      height: 13em;
+    }
+
+    @include at-query ($min, $large) {
+      height: 15em;
+    }
+  }
+
+  .grid__link-block {
+    margin-bottom: 0;
+  }
+}
+
+.grid--collections__featuring {
+  margin-bottom: $gutter;
+
+  li {
+    margin-bottom: 1em;
+  }
 }
 
 /*============================================================================

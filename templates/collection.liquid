@@ -67,9 +67,8 @@
     </div>
 
     {% if paginate.pages > 1 %}
-      <hr>
       <div class="pagination">
-        {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+        {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr; Prev' | replace: 'Next &raquo;', 'Next &rarr;' }}
       </div>
     {% endif %}
 

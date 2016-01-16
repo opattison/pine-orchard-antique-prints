@@ -1,8 +1,7 @@
 <!-- /snippets/collection-grid-item.liquid -->
 
 {% assign isEmpty = false %}
-{% assign collection_item_width = 'large--one-half' %}
-<div class="grid__item {{ collection_item_width }} text-center">
+<div class="grid__item {{ collection_item_width }}">
   {% comment %}
     Use capture to put the collection title in a variable that is used in liquid filters
   {% endcomment %}
@@ -12,7 +11,7 @@
 
     {% if collection.image %}
 
-      <div class="grid__image" style="background-image: url('{{ collection.image | img_url: 'large' }}')">
+      <div class="grid__image" style="background-image: url('{{ collection.image | img_url: 'grande' }}')">
       </div>
 
     {% else %}
@@ -20,18 +19,25 @@
       {% assign feature_image = collection.products.first.images[0].src %}
       {% assign crop_image = collection.products.first.images[1].src %}
       {% if collection.products.first.images.size > 1 %}
-      <div class="grid__image" style="background-image: url('{{ crop_image | img_url: 'large' }}')">
+      <div class="grid__image" style="background-image: url('{{ crop_image | img_url: 'grande' }}')">
       </div>
       {% else %}
-      <div class="grid__image" style="background-image: url('{{ feature_image | img_url: 'large' }}')">
+      <div class="grid__image" style="background-image: url('{{ feature_image | img_url: 'grande' }}')">
       </div>
       {% endif %}
 
     {% endif %}
 
-    <p class="h5">
-      <span class="small-cap">{{ collection.title }}</span> – {{ 'collections.general.items_with_count' | t: count: collection.all_products_count }}
-    </p>
+    <div class="grid-uniform">
+      <div class="grid__item three-quarters small-cap">
+        <span class="{% if heading_size %}{{ heading_size }}{% else %}h5{% endif %}">
+          {{ collection.title }}
+        </span>
+      </div>
+      <div class="grid__item one-quarter text-right">
+        {{ 'collections.general.items_with_count' | t: count: collection.all_products_count }}
+      </div>
+    </div>
   </a>
 
 </div>

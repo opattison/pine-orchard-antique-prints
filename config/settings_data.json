@@ -9,7 +9,7 @@
       "color_body_text": "#182905",
       "color_nav_bg": "#eeeee7",
       "color_nav_text": "#182905",
-      "color_borders": "#e5e5e5",
+      "color_borders": "#babaab",
       "color_footer_bg": "#dedece",
       "color_footer_social_link": "#305309",
       "color_footer_text": "#182905",
@@ -17,12 +17,21 @@
       "color_primary": "#305309",
       "color_secondary": "#5c5c5c",
       "email_public": "keith@pineorchardprints.com",
-      "favicon_enable": true,
       "footer_newsletter_enable": true,
       "footer_social_enable": true,
       "newsletter_form_action": "//pineorchardprints.us12.list-manage.com/subscribe/post?u=e52e4d702a703782e614c91dd&amp;id=da7a8d6a64",
       "social_facebook": "pineorchardprints",
-      "social_twitter": "pineorchardprints"
+      "social_twitter": "pineorchprints",
+      "homepage_collections": [
+        "homer",
+        "new-york-state-views",
+        "virginia-and-south-views",
+        "new-england-views",
+        "costume",
+        "civil-war",
+        "american-landscape",
+        "birds-moths-and-butterflies"
+      ]
     }
   }
 }
