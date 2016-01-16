@@ -9,30 +9,42 @@
 
 {% endcomment %}
 
+<h1 class="section-header__title">All Collections</h1>
+
 {% comment %}
   Loop through each collection, except 'frontpage' and 'all'
   Sort collections by handle
 {% endcomment %}
 {% assign sorted_collections = collections | sort: 'handle' %}
-{% for collection in sorted_collections %}
+{% assign collection_item_width = 'large--five-eighths' %}
 
-  {% unless collection.handle == 'frontpage' or collection.handle == 'all' %}
+  {% for collection in sorted_collections %}
 
-    {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+    {% unless collection.handle == 'frontpage' or collection.handle == 'all' %}
 
-    <div class="section-header">
-      <h2 class="section-header__left"><a href="{{ collection.url }}" title="Browse {{ collection.title }}">{{ collection_title }}</a></h2>
-    </div>
+      <hr>
 
-    <div class="grid">
-      {% for product in collection.products limit:4 %}
-        {% assign grid_item_width = 'large--one-quarter medium--one-half' %}
-        {% include 'product-grid-item' %}
-      {% endfor %}
-    </div>
+      <div class="grid-uniform grid--collections">
 
-    {% unless forloop.last %}<hr>{% endunless %}
+        {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
 
-  {% endunless %}
+        {% assign heading_size = 'h3' %}
 
-{% endfor %}
+        {% include 'collection-grid-item' %}
+
+        <div class="grid--collections__featuring grid__item large--three-eighths medium--one-half push--medium--one-half">
+          <h4>Featuring:</h4>
+          <ul class="no-bullets">
+            {% for product in collection.products limit:2 %}
+              {% include 'product-list-item' %}
+            {% endfor %}
+          </ul>
+        </div>
+
+      </div>
+
+    {% endunless %}
+
+  {% endfor %}
+
+</div>

@@ -127,9 +127,9 @@ $successGreenBg: #ecfef0;
 // Drawers
 $drawerNavWidth: 300px;
 $drawerCartWidth: 300px;
-$colorDrawers: #f6f6f6;
-$colorDrawerBorder: darken($colorDrawers, 5%);
-$colorDrawerText: #333;
+$colorDrawers: scale-color($colorBody, $lightness: 15%);
+$colorDrawerBorder: $colorBody;
+$colorDrawerText: $colorTextBody;
 $drawerTransition: all 200ms cubic-bezier(0.46, 0.01, 0.32, 1);
 
 // Sizing variables
@@ -949,7 +949,7 @@ pre {
 /*================ Horizontal Rules ================*/
 hr {
   clear: both;
-  border-top: solid $colorPrimary;
+  border-top: solid $colorBorder;
   border-width: 1px 0 0;
   margin: $gutter 0;
   height: 0;
@@ -2160,8 +2160,9 @@ label.error {
   background-size: cover;
   background-position: center;
   height: 8em;
+  margin-bottom: $gutter / 4;
 
-  @include at-query ($min, $medium) {
+  @include at-query ($min, $small) {
     height: 10em;
   }
 
@@ -2178,13 +2179,40 @@ label.error {
 .grid--list .grid__image {
   height: 8em;
 
-  @include at-query ($min, $medium) {
+  @include at-query ($min, $small) {
     height: 6em;
   }
 }
 
 .grid--list .grid__item {
   margin-bottom: ($gutter / 4);
+}
+
+.grid--collections {
+
+  .grid__image {
+    height: 9em;
+
+    @include at-query ($min, $small) {
+      height: 13em;
+    }
+
+    @include at-query ($min, $large) {
+      height: 15em;
+    }
+  }
+
+  .grid__link-block {
+    margin-bottom: 0;
+  }
+}
+
+.grid--collections__featuring {
+  margin-bottom: $gutter;
+
+  li {
+    margin-bottom: 1em;
+  }
 }
 
 /*============================================================================
