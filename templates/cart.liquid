@@ -39,10 +39,6 @@
                 <small>{{ item.variant.title }}</small>
               {% endunless %}
 
-              {% if settings.cart_vendor_enable %}
-                <p>{{ item.vendor }}</p>
-              {% endif %}
-
               {% comment %}
                 Optional, loop through custom product line items if available
 
