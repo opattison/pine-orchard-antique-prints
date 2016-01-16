@@ -2071,6 +2071,10 @@ label.error {
 /*============================================================================
   #Drawers
 ==============================================================================*/
+.js-drawer-open {
+  overflow: hidden;
+  height: 100%;
+}
 
 .drawer {
   @include promote-layer();
@@ -2114,21 +2118,6 @@ label.error {
 
     .lt-ie9 & {
       left: 0;
-    }
-  }
-}
-
-.drawer--right {
-  width: $drawerCartWidth;
-  right: -$drawerCartWidth;
-  border-left: 1px solid $colorDrawerBorder;
-
-  .js-drawer-open-right & {
-    display: block;
-    @include transform(translateX(-$drawerCartWidth));
-
-    .lt-ie9 & {
-      right: 0;
     }
   }
 }
