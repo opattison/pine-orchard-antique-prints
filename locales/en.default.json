@@ -58,7 +58,7 @@
       "update": "Update Cart",
       "checkout": "Check Out",
       "empty": "Your cart is currently empty.",
-      "continue_browsing_html": "<strong><a href=\"\/collections\/all\">Continue browsing<\/a><\/strong>.",
+      "continue_browsing_html": "<a class=\"btn\" href=\"\/collections\/all\">Continue Browsing<\/a>",
       "close_cart": "Close Cart"
     },
     "label": {
