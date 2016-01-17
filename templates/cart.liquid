@@ -97,8 +97,8 @@
     The cart is empty
   {% endcomment %}
   <h2>{{ 'cart.general.title' | t }}</h2>
-  <p>{{ 'cart.general.empty' | t }}</p>
-  <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+  <p><em>{{ 'cart.general.empty' | t }}</em></p>
+  {{ 'cart.general.continue_browsing_html' | t }}
 {% endif %}
 
 <div class="box-container">
@@ -106,7 +106,7 @@
     <strong>Free</strong> shipping on all orders!
   </div>
   <div class="box--promo">
-    <strong>10% off</strong> applied automatically to orders with more than two items at checkout.
+    <strong>10% off</strong> applied automatically to orders with more than two items at checkout. {% if cart.item_count < 2 %}<a href="/collections/all">Keep shopping</a>?{% endif %}
   </div>
 </div>
 
