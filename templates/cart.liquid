@@ -63,25 +63,33 @@
         {% endfor %}
       </tbody>
     </table>
-    <div class="push--large--one-eighth large--three-quarters text-right">
-        <div>
-          <div class="cart__subtotal-title">
-            {{ 'cart.general.subtotal' | t }}:
-          </div>
-          <div class="cart__subtotal">
-            {{ cart.total_price | money }}
-          </div>
-        </div>
+    {% if settings.cart_notes_enable %}
+      <div class="push--large--one-eighth large--three-quarters">
+        <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+        <textarea name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+      </div>
+    {% endif %}
+    <div class="grid--full">
+      <div class="grid__item push--large--one-eighth large--one-half medium-down--text-right">
         {% if cart.item_count >= 2 %}
-          <input type="hidden" name="discount" value="two-item-discount-20150106"/>
+        <label for="discount"><strong>10% discount will be applied!</strong></label>
+        <input class="large--one-half" name="discount" value="two-item-discount-20150106" hidden="true"/>
+        {% else %}
+        <label for="discount">Discount code:</label>
+        <input class="large--one-half" name="discount"/>
         {% endif %}
-        <input type="submit" name="checkout" class="btn--secondary" value="{{ 'cart.general.checkout' | t }}">
-      {% if settings.cart_notes_enable %}
-        <div class="push--large--one-eighth large--three-quarters">
-          <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-          <textarea name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
-        </div>
-      {% endif %}
+      </div>
+      <div class="grid__item push--large--one-eighth one-quarter medium-down--one-whole text-right">
+          <div>
+            <div class="cart__subtotal-title">
+              {{ 'cart.general.subtotal' | t }}:
+            </div>
+            <div class="cart__subtotal">
+              {{ cart.total_price | money }}
+            </div>
+          </div>
+          <input type="submit" name="checkout" class="btn--secondary" value="{{ 'cart.general.checkout' | t }}">
+      </div>
     </div>
   </form>
 {% else %}
@@ -95,7 +103,7 @@
 
 <div class="box-container">
   <div class="box--promo">
-    Free shipping on all orders!
+    <strong>Free</strong> shipping on all orders!
   </div>
   <div class="box--promo">
     <strong>10% off</strong> applied automatically to orders with more than two items at checkout.

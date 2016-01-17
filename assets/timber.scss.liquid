@@ -2489,6 +2489,10 @@ label.error {
   margin: ($gutter / 2) 0 ($gutter / 2) ($gutter / 4);
   display: inline-block;
   font-weight: $bodyFontDemi;
+
+  @include at-query ($min, $small) {
+    margin-top: $gutter;
+  }
 }
 
 /*============================================================================
@@ -2628,7 +2632,7 @@ label.error {
   border-radius: $radius;
   flex: 0 0 calc(100% - #{$gutter});
   margin: $gutter / 2;
-  padding: $gutter / 2;
+  padding: $gutter / 2 $gutter;
   width: calc(100% - #{$gutter});
 
   font-weight: $bodyFontRegular;
@@ -2652,4 +2656,17 @@ label.error {
   @include at-query ($min, $small) {
     text-align: right;
   }
+}
+
+label[for="discount"] {
+  cursor: default;
+  display: inline-block;
+  font-weight: $bodyFontMedium;
+  padding-top: 18px;
+}
+
+input[name="discount"] {
+  margin-top: 18px;
+  font-family: Consolas, monospace;
+  font-size: 14px;
 }
