@@ -1864,9 +1864,15 @@ label.error {
 .site-nav--mobile {
   @include nav;
 
-  & button {
-    font-size: inherit;
+  font-size: em(20px);
+
+  button {
+    font-size: 1em; // reset
     font-weight: inherit;
+  }
+
+  @include at-query ($min, $small) {
+    font-size: em(24px);
   }
 }
 

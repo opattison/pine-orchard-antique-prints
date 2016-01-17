@@ -148,11 +148,10 @@
                 Show number of items in the cart and total cost in the /cart link
 
                 Ajax Cart Notes:
-                  - #cartCount updates the total number of items in the cart
-                  - #cartCost updates the total cost of the cart
+                  - .CartCount updates the total number of items in the cart
+                  - #CartCost updates the total cost of the cart
                   - Documentation:  http://shopify.com/timber#ajax-cart
 
-                // Header cart removed
               {% endcomment %}
 
 
@@ -228,7 +227,7 @@
 
             <div class="grid__item site-nav three-eighths text-right right">
               <a href="/cart" class="site-nav__link">
-                {{ 'layout.cart.title' | t }} (<span id="CartCount">{{ cart.item_count }}</span> {{ 'layout.cart.items_count' | t: count: cart.item_count }} <span id="CartCost">{{ cart.total_price | money }}</span>)
+                {{ 'layout.cart.title' | t }} (<span class="CartCount">{{ cart.item_count }}</span> {{ 'layout.cart.items_count' | t: count: cart.item_count }} <span id="CartCost">{{ cart.total_price | money }}</span>)
               </a>
             </div>
           </div>
@@ -246,7 +245,7 @@
             <div class="grid__item one-half text-right">
               <div class="site-nav--mobile">
                 <a href="/cart" class="site-nav__link">
-                  {{ 'layout.cart.title' | t }}
+                  {{ 'layout.cart.title' | t }} (<span class="CartCount">{{ cart.item_count }}</span> {{ 'layout.cart.items_count' | t: count: cart.item_count }})
                 </a>
               </div>
             </div>
@@ -340,7 +339,7 @@
           formSelector: '#AddToCartForm',
           cartContainer: '#CartContainer',
           addToCartSelector: '#AddToCart',
-          cartCountSelector: '#CartCount',
+          cartCountSelector: '.CartCount',
           cartCostSelector: '#CartCost',
           moneyFormat: {{ shop.money_format | json }}
         });
