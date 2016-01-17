@@ -4,7 +4,7 @@
 
   <h1>{{ 'cart.general.title' | t }}</h1>
   <form action="/cart" method="post" novalidate class="cart table-wrap">
-    <table class="cart-table large--three-quarters table--responsive">
+    <table class="cart-table push--large--one-eighth large--three-quarters table--responsive">
       <thead class="cart__row cart__header-labels">
         <th colspan="2">{{ 'cart.label.product' | t }}</th>
         <th class="text-right">{{ 'cart.label.price' | t }}</th>
@@ -64,7 +64,7 @@
       </tbody>
     </table>
     <div class="responsive-table">
-      <div class="large--three-quarters text-right{% if settings.cart_notes_enable %} one-third small--one-whole{% endif %}">
+      <div class="push--large--one-eighth large--three-quarters text-right{% if settings.cart_notes_enable %} one-third small--one-whole{% endif %}">
         <div>
           <div class="cart__subtotal-title">
             {{ 'cart.general.subtotal' | t }}:
@@ -79,7 +79,7 @@
         <input type="submit" name="checkout" class="btn--secondary" value="{{ 'cart.general.checkout' | t }}">
       </div>
       {% if settings.cart_notes_enable %}
-        <div class="large--three-quarters">
+        <div class="push--large--one-eighth large--three-quarters">
           <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
           <textarea name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
         </div>
