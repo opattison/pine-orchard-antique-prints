@@ -45,6 +45,7 @@
   #Notes and Form Feedback
   #Cart Page
   #Ajax Cart Styles
+  #Shop-specific Styles
 ==============================================================================*/
 
 /*============================================================================
@@ -127,7 +128,6 @@ $successGreenBg: #ecfef0;
 
 // Drawers
 $drawerNavWidth: 300px;
-$drawerCartWidth: 300px;
 $colorDrawers: scale-color($colorBody, $lightness: 40%);
 $colorDrawerBorder: $colorBody;
 $colorDrawerText: $colorTextBody;
@@ -1227,13 +1227,15 @@ html input[disabled] {
 
   &:hover {
     background-color: $colorBtnSecondary;
+    border-color: $colorBtnSecondary;
     color: $colorBtnSecondaryText;
   }
 
   &:active,
   &:focus {
-   background-color: $colorBtnSecondaryActive;
-   color: $colorBtnSecondaryText;
+    background-color: $colorBtnSecondaryActive;
+    border-color: $colorBtnSecondaryActive;
+    color: $colorBtnSecondaryText;
   }
 }
 
@@ -2605,3 +2607,49 @@ label.error {
 }
 
 {% endif %} // settings.ajax_cart_enable
+
+/*============================================================================
+  #Shop-specific Styles
+==============================================================================*/
+
+.box-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: $gutter $gutter / -2;
+
+  @include at-query ($min, $small) {
+    margin-top: $gutter * 1.5;
+    margin-bottom: $gutter * 1.5;
+  }
+}
+
+.box {
+  border-radius: $radius;
+  flex: 0 0 calc(100% - #{$gutter});
+  margin: $gutter / 2;
+  padding: $gutter / 2;
+  width: calc(100% - #{$gutter});
+
+  font-weight: $bodyFontRegular;
+  font-size: em(18px);
+  text-align: center;
+
+  @include at-query ($min, $small) {
+    flex-basis: calc(50% - #{$gutter});
+  }
+}
+
+.box--promo {
+  @extend .box;
+  border: 1px solid $colorTextBody;
+}
+
+.disclaimer {
+  font-size: em(18px);
+  text-align: center;
+
+  @include at-query ($min, $small) {
+    text-align: right;
+  }
+}

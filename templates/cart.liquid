@@ -63,8 +63,7 @@
         {% endfor %}
       </tbody>
     </table>
-    <div class="responsive-table">
-      <div class="push--large--one-eighth large--three-quarters text-right{% if settings.cart_notes_enable %} one-third small--one-whole{% endif %}">
+    <div class="push--large--one-eighth large--three-quarters text-right">
         <div>
           <div class="cart__subtotal-title">
             {{ 'cart.general.subtotal' | t }}:
@@ -77,7 +76,6 @@
           <input type="hidden" name="discount" value="two-item-discount-20150106"/>
         {% endif %}
         <input type="submit" name="checkout" class="btn--secondary" value="{{ 'cart.general.checkout' | t }}">
-      </div>
       {% if settings.cart_notes_enable %}
         <div class="push--large--one-eighth large--three-quarters">
           <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
@@ -94,3 +92,14 @@
   <p>{{ 'cart.general.empty' | t }}</p>
   <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
 {% endif %}
+
+<div class="box-container">
+  <div class="box--promo">
+    Free shipping on all orders!
+  </div>
+  <div class="box--promo">
+    <strong>10% off</strong> applied automatically to orders with more than two items at checkout.
+  </div>
+</div>
+
+<p class="disclaimer">Read about <strong><a href="/pages/about#policies">the shop’s policies and guarantees</a></strong>.</p>
