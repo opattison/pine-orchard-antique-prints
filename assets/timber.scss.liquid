@@ -2653,11 +2653,12 @@ label.error {
   width: calc(100% - #{$gutter});
 
   font-weight: $bodyFontRegular;
-  font-size: em(18px);
+  font-size: em(16px);
   text-align: center;
 
   @include at-query ($min, $small) {
     flex-basis: calc(50% - #{$gutter});
+    font-size: em(18px);
   }
 }
 
@@ -2713,8 +2714,9 @@ input[name="discount"] {
 .credit {
   display: flex;
   align-items: center;
+  font-size: .8em;
   justify-content: flex-end;
-  margin: ($gutter * 2) 0 $gutter;
+  margin-top: ($gutter * 2);
 
   &:hover a {
     color: $colorLinkHover;
@@ -2723,6 +2725,10 @@ input[name="discount"] {
   &:hover circle {
     stroke: $colorLinkHover;
   }
+
+  @include at-query ($min, $small) {
+    font-size: 1em;
+  }
 }
 
 .credit__text {
@@ -2730,6 +2736,7 @@ input[name="discount"] {
 
   a {
     color: #397eac;
+    font-weight: $bodyFontMedium;
   }
 
   a:focus,
@@ -2741,7 +2748,7 @@ input[name="discount"] {
 .credit__logo {
   display: block;
   margin-left: 4px;
-  width: 18px;
+  width: 1.125em;
 
   a {
     display: block;
@@ -2754,7 +2761,7 @@ input[name="discount"] {
 
   circle {
     stroke: #397eac;
-    stroke-width: 40;
+    stroke-width: 48;
   }
 
   :hover circle {
