@@ -2703,3 +2703,38 @@ input[name="discount"] {
   font-family: Consolas, monospace;
   font-size: 14px;
 }
+
+.credit {
+  display: flex;
+  justify-content: flex-end;
+  margin: ($gutter * 2) 0 $gutter;
+
+  &:hover a {
+    color: $colorLinkHover;
+  }
+
+  &:hover circle {
+    stroke: $colorLinkHover;
+  }
+}
+
+.credit__text {
+  display: block;
+}
+
+.credit__logo {
+  display: block;
+  margin-top: 2px;
+  padding: 0 4px;
+  width: 26px;
+
+  circle {
+    stroke: $colorLink;
+    stroke-width: 40;
+  }
+
+  &:hover circle,
+  &:focus circle {
+    stroke: $colorLinkHover;
+  }
+}
