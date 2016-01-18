@@ -278,8 +278,8 @@
             </ul>
           </div>
           {% if settings.footer_newsletter_enable %}
-          <div class="grid__item five-eighths small--one-whole">
-            <h3>{{ 'layout.footer.newsletter_title' | t }}</h3>
+          <div class="site-footer__newsletter grid__item five-eighths small--one-whole">
+            <h3 class="text-left">{{ 'layout.footer.newsletter_title' | t }}</h3>
             {% if settings.newsletter_form_action != blank %}
               {% assign form_action = settings.newsletter_form_action %}
             {% else %}

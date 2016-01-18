@@ -2194,6 +2194,12 @@ label.error {
   }
 }
 
+.site-footer__newsletter {
+  @include at-query ($max, $small) {
+    margin-top: $gutter;
+  }
+}
+
 /*============================================================================
   #Product and Collection Grids
 ==============================================================================*/
