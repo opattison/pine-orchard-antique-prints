@@ -2728,13 +2728,21 @@ input[name="discount"] {
   padding: 0 4px;
   width: 26px;
 
+  a {
+    display: block;
+    height: 18px;
+  }
+
   circle {
     stroke: $colorLink;
     stroke-width: 40;
   }
 
-  &:hover circle,
-  &:focus circle {
+  :hover circle {
     stroke: $colorLinkHover;
+  }
+
+  :focus circle {
+    stroke: $colorBody;
   }
 }
