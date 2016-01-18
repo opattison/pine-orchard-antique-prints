@@ -102,14 +102,15 @@
 {% endif %}
 
 <div class="box-container">
+  {% if settings.bulk_discount_enable == true %}
+  <div class="box--promo">
+    <strong>10% off</strong> all orders with more than two items (applied automatically at checkout). {% if cart.item_count < 2 %}<a href="/collections/all">Keep shopping</a>?{% endif %}
+  </div>
+  {% endif %}
   <div class="box--promo">
     <strong>Free</strong> shipping on all orders!
   </div>
-  {% if settings.bulk_discount_enable == true %}
-  <div class="box--promo">
-    <strong>10% off</strong> applied automatically to orders with more than two items at checkout. {% if cart.item_count < 2 %}<a href="/collections/all">Keep shopping</a>?{% endif %}
-  </div>
-  {% endif %}
 </div>
 
+<p class="disclaimer">Shipping is offered only within the continental United States.</p>
 <p class="disclaimer">Read about <strong><a href="/pages/about#policies">the shop’s policies and guarantees</a></strong>.</p>
