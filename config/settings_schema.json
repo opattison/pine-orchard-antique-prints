@@ -4,6 +4,16 @@
     "settings": [
       {
         "type": "header",
+        "content": "Site functionality",
+        "info": "Check for normal use, uncheck to generate site-wide language that suggests that the shop is not accepting orders."
+      },
+      {
+        "type": "checkbox",
+        "id": "site_enable",
+        "label": "Enable normal site functionality"
+      },
+      {
+        "type": "header",
         "content": "Favicon"
       },
       {
@@ -12,6 +22,12 @@
         "label": "A favicon is the image that appears next to the site’s title name in some browsers, or attached to a bookmark. The default size is 32px by 32px.",
         "max-width": 32,
         "max-height": 32
+      },
+      {
+        "type": "text",
+        "id": "newsletter_form_action",
+        "label": "MailChimp Form Action URL",
+        "info": "[Where do I find my MailChimp form action URL?](http:\/\/docs.shopify.com\/support\/configuration\/store-customization\/where-do-i-get-my-mailchimp-form-action)"
       }
     ]
   },
@@ -106,6 +122,56 @@
     ]
   },
   {
+    "name": "Homepage",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Homepage collections",
+        "info": "These collections (eight by default) are included in a list on the homepage. Enter the collection in each field individually. The order on the page corresponds directly to their position number. If a collection is not specified, that position will be removed from the list and no collection will replace it."
+      },
+      {
+        "type": "collection",
+        "id": "homepage_collection_1",
+        "label": "Position 1"
+      },
+      {
+        "type": "collection",
+        "id": "homepage_collection_2",
+        "label": "Position 2"
+      },
+      {
+        "type": "collection",
+        "id": "homepage_collection_3",
+        "label": "Position 3"
+      },
+      {
+        "type": "collection",
+        "id": "homepage_collection_4",
+        "label": "Position 4"
+      },
+      {
+        "type": "collection",
+        "id": "homepage_collection_5",
+        "label": "Position 5"
+      },
+      {
+        "type": "collection",
+        "id": "homepage_collection_6",
+        "label": "Position 6"
+      },
+      {
+        "type": "collection",
+        "id": "homepage_collection_7",
+        "label": "Position 7"
+      },
+      {
+        "type": "collection",
+        "id": "homepage_collection_8",
+        "label": "Position 8"
+      }
+    ]
+  },
+  {
     "name": "Header",
     "settings": [
       {
@@ -133,12 +199,6 @@
         "type": "checkbox",
         "id": "footer_newsletter_enable",
         "label": "Show newsletter field"
-      },
-      {
-        "type": "text",
-        "id": "newsletter_form_action",
-        "label": "MailChimp Form Action URL",
-        "info": "[Where do I find my MailChimp form action URL?](http:\/\/docs.shopify.com\/support\/configuration\/store-customization\/where-do-i-get-my-mailchimp-form-action)"
       }
     ]
   },
@@ -157,10 +217,15 @@
         "info": "[View Documentation](http:\/\/shopify.com\/timber#ajax-cart)"
       },
       {
+        "type": "checkbox",
+        "id": "bulk_discount_enable",
+        "label": "Enable bulk discount code"
+      },
+      {
         "type": "text",
         "id": "bulk_discount",
         "label": "Bulk discount code for more than two items",
-        "info": "Match to code on [Discounts page](https:\/\/pine-orchard-prints.myshopify.com\/admin\/discounts)"
+        "info": "Match to the code on [Discounts page](https:\/\/pine-orchard-prints.myshopify.com\/admin\/discounts)"
       }
     ]
   }

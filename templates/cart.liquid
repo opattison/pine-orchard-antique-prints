@@ -4,7 +4,7 @@
 
   <h1>{{ 'cart.general.title' | t }}</h1>
   <form action="/cart" method="post" novalidate class="cart table-wrap">
-    <table class="cart-table large--three-quarters table--responsive">
+    <table class="cart-table push--large--one-eighth large--three-quarters table--responsive">
       <thead class="cart__row cart__header-labels">
         <th colspan="2">{{ 'cart.label.product' | t }}</th>
         <th class="text-right">{{ 'cart.label.price' | t }}</th>
@@ -63,34 +63,54 @@
         {% endfor %}
       </tbody>
     </table>
-    <div class="responsive-table">
-      <div class="large--three-quarters text-right{% if settings.cart_notes_enable %} one-third small--one-whole{% endif %}">
-        <div>
-          <div class="cart__subtotal-title">
-            {{ 'cart.general.subtotal' | t }}:
-          </div>
-          <div class="cart__subtotal">
-            {{ cart.total_price | money }}
-          </div>
-        </div>
-        {% if cart.item_count >= 2 %}
-          <input type="hidden" name="discount" value="two-item-discount-20150106"/>
-        {% endif %}
-        <input type="submit" name="checkout" class="btn--secondary" value="{{ 'cart.general.checkout' | t }}">
+    {% if settings.cart_notes_enable %}
+      <div class="push--large--one-eighth large--three-quarters">
+        <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+        <textarea name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
       </div>
-      {% if settings.cart_notes_enable %}
-        <div class="large--three-quarters">
-          <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-          <textarea name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
-        </div>
-      {% endif %}
+    {% endif %}
+    <div class="grid--full">
+      <div class="grid__item push--large--one-eighth large--one-half medium-down--text-right">
+        {% if cart.item_count >= 2 and settings.bulk_discount_enable == true %}
+        <label for="discount"><strong>10% discount will be applied!</strong></label>
+        <input class="large--one-half" name="discount" value="two-item-discount-20150106" hidden="true"/>
+        {% else %}
+        <label for="discount">Discount code:</label>
+        <input class="large--one-half" name="discount"/>
+        {% endif %}
+      </div>
+      <div class="grid__item push--large--one-eighth one-quarter medium-down--one-whole text-right">
+          <div>
+            <div class="cart__subtotal-title">
+              {{ 'cart.general.subtotal' | t }}:
+            </div>
+            <div class="cart__subtotal">
+              {{ cart.total_price | money }}
+            </div>
+          </div>
+          <input type="submit" name="checkout" class="btn--secondary" value="{{ 'cart.general.checkout' | t }}">
+      </div>
     </div>
   </form>
 {% else %}
   {% comment %}
     The cart is empty
   {% endcomment %}
-  <h2>{{ 'cart.general.title' | t }}</h2>
-  <p>{{ 'cart.general.empty' | t }}</p>
-  <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+  <h1>{{ 'cart.general.title' | t }}</h1>
+  <p class="cart__empty"><em>{{ 'cart.general.empty' | t }}</em></p>
+  {{ 'cart.general.continue_browsing_html' | t }}
 {% endif %}
+
+<div class="box-container">
+  {% if settings.bulk_discount_enable == true %}
+  <div class="box--promo">
+    <strong>10% off</strong> all orders with more than two items (applied automatically at checkout). {% if cart.item_count < 2 %}<a href="/collections/all">Keep shopping</a>?{% endif %}
+  </div>
+  {% endif %}
+  <div class="box--promo">
+    <strong>Free</strong> shipping on all orders!
+  </div>
+</div>
+
+<p class="disclaimer">Shipping is offered only within the continental United States.</p>
+<p class="disclaimer">Read about <strong><a href="/pages/about#policies">the shop’s policies and guarantees</a></strong>.</p>

@@ -45,6 +45,7 @@
   #Notes and Form Feedback
   #Cart Page
   #Ajax Cart Styles
+  #Shop-specific Styles
 ==============================================================================*/
 
 /*============================================================================
@@ -127,7 +128,6 @@ $successGreenBg: #ecfef0;
 
 // Drawers
 $drawerNavWidth: 300px;
-$drawerCartWidth: 300px;
 $colorDrawers: scale-color($colorBody, $lightness: 40%);
 $colorDrawerBorder: $colorBody;
 $colorDrawerText: $colorTextBody;
@@ -1119,7 +1119,7 @@ figcaption {
 
   @include at-query($min, $medium) {
     float: left;
-    margin-left: -60%;
+    margin-left: -60% !important;
     max-width: 50%;
   }
 }
@@ -1227,13 +1227,15 @@ html input[disabled] {
 
   &:hover {
     background-color: $colorBtnSecondary;
+    border-color: $colorBtnSecondary;
     color: $colorBtnSecondaryText;
   }
 
   &:active,
   &:focus {
-   background-color: $colorBtnSecondaryActive;
-   color: $colorBtnSecondaryText;
+    background-color: $colorBtnSecondaryActive;
+    border-color: $colorBtnSecondaryActive;
+    color: $colorBtnSecondaryText;
   }
 }
 
@@ -1864,9 +1866,15 @@ label.error {
 .site-nav--mobile {
   @include nav;
 
-  & button {
-    font-size: inherit;
+  font-size: em(20px);
+
+  button {
+    font-size: 1em; // reset
     font-weight: inherit;
+  }
+
+  @include at-query ($min, $small) {
+    font-size: em(24px);
   }
 }
 
@@ -2068,6 +2076,12 @@ label.error {
   }
 }
 
+.footer-nav {
+  li {
+    font-weight: $bodyFontDemi;
+  }
+}
+
 /*============================================================================
   #Drawers
 ==============================================================================*/
@@ -2177,6 +2191,12 @@ label.error {
 
   @include at-query ($min, $large) {
     padding: ($gutter * 2) 0;
+  }
+}
+
+.site-footer__newsletter {
+  @include at-query ($max, $small) {
+    margin-top: $gutter;
   }
 }
 
@@ -2481,6 +2501,15 @@ label.error {
   margin: ($gutter / 2) 0 ($gutter / 2) ($gutter / 4);
   display: inline-block;
   font-weight: $bodyFontDemi;
+
+  @include at-query ($min, $small) {
+    margin-top: $gutter;
+  }
+}
+
+.cart__empty {
+  font-size: em(20px);
+  margin: ($gutter * 2) 0 $gutter;
 }
 
 /*============================================================================
@@ -2599,3 +2628,136 @@ label.error {
 }
 
 {% endif %} // settings.ajax_cart_enable
+
+/*============================================================================
+  #Shop-specific Styles
+==============================================================================*/
+
+.box-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: $gutter $gutter / -2;
+
+  @include at-query ($min, $small) {
+    margin-top: $gutter * 1.5;
+    margin-bottom: $gutter * 1.5;
+  }
+}
+
+.box {
+  border-radius: $radius;
+  flex: 0 0 calc(100% - #{$gutter});
+  margin: $gutter / 2;
+  padding: $gutter / 2 $gutter;
+  width: calc(100% - #{$gutter});
+
+  font-weight: $bodyFontRegular;
+  font-size: em(18px);
+  text-align: center;
+
+  @include at-query ($min, $small) {
+    flex-basis: calc(50% - #{$gutter});
+  }
+}
+
+.box--alert {
+  @extend .box;
+  background-color: $errorRedBg;
+  border: 1px solid $errorRed;
+  color: $errorRed;
+
+  a {
+    color: $colorTextBody;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      background-color: $colorTextBody;
+      color: $errorRedBg;
+    }
+  }
+}
+
+.box--promo {
+  @extend .box;
+  border: 1px solid $colorTextBody;
+
+  strong {
+    color: $colorBtnPrimary;
+  }
+}
+
+.disclaimer {
+  font-size: em(18px);
+  text-align: center;
+
+  @include at-query ($min, $small) {
+    text-align: right;
+  }
+}
+
+label[for="discount"] {
+  cursor: default;
+  display: inline-block;
+  font-weight: $bodyFontMedium;
+  padding-top: 18px;
+}
+
+input[name="discount"] {
+  margin-top: 18px;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+}
+
+.credit {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: ($gutter * 2) 0 $gutter;
+
+  &:hover a {
+    color: $colorLinkHover;
+  }
+
+  &:hover circle {
+    stroke: $colorLinkHover;
+  }
+}
+
+.credit__text {
+  display: block;
+
+  a {
+    color: #397eac;
+  }
+
+  a:focus,
+  a:active {
+    background-color: transparent;
+  }
+}
+
+.credit__logo {
+  display: block;
+  margin-left: 4px;
+  width: 18px;
+
+  a {
+    display: block;
+    height: 18px;
+  }
+
+  a:focus {
+    background-color: transparent;
+  }
+
+  circle {
+    stroke: #397eac;
+    stroke-width: 40;
+  }
+
+  :hover circle {
+    stroke: $colorLinkHover;
+  }
+}
