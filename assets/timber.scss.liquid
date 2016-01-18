@@ -2653,11 +2653,12 @@ label.error {
   width: calc(100% - #{$gutter});
 
   font-weight: $bodyFontRegular;
-  font-size: em(18px);
+  font-size: em(16px);
   text-align: center;
 
   @include at-query ($min, $small) {
     flex-basis: calc(50% - #{$gutter});
+    font-size: em(18px);
   }
 }
 
@@ -2714,7 +2715,7 @@ input[name="discount"] {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin: ($gutter * 2) 0 $gutter;
+  margin-top: ($gutter * 2);
 
   &:hover a {
     color: $colorLinkHover;

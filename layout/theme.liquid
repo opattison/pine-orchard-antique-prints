@@ -235,14 +235,14 @@
         </div>
         <div class="large--hide medium-down--show">
           <div class="grid">
-            <div class="grid__item one-half">
+            <div class="grid__item one-quarter">
               <div class="site-nav--mobile">
                 <button type="button" class="site-nav__link js-drawer-open-left" aria-controls="NavDrawer" aria-expanded="false">
                   {{ 'layout.navigation.menu' | t }}
                 </button>
               </div>
             </div>
-            <div class="grid__item one-half text-right">
+            <div class="grid__item three-quarters text-right">
               <div class="site-nav--mobile">
                 <a href="/cart" class="site-nav__link">
                   {{ 'layout.cart.title' | t }} (<span class="CartCount">{{ cart.item_count }}</span> {{ 'layout.cart.items_count' | t: count: cart.item_count }})
