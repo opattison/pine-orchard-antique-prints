@@ -42,17 +42,67 @@
 <div class="grid-uniform">
 
   {% assign collection_item_width = 'large--one-half' %}
-  {% assign homepage_collections = settings.homepage_collections %}
-  {% assign sorted_collections = collections | sort: 'handle' %}
 
-  {% for collection in sorted_collections %}
+  {% comment %}
 
-      {% if homepage_collections contains collection.handle %}
+    Hand-picked collections, chosen by the site administrator in the theme settings.
 
-        {% include 'collection-grid-item' %}
+  {% endcomment %}
 
-      {% endif %}
+  {% comment %}Position 1{% endcomment %}
+  {% for collection in collections %}
+    {% if collection.handle == settings.homepage_collection_1 %}
+      {% include 'collection-grid-item' %}
+    {% endif %}
+  {% endfor %}
 
+  {% comment %}Position 2{% endcomment %}
+  {% for collection in collections %}
+    {% if collection.handle == settings.homepage_collection_2 %}
+      {% include 'collection-grid-item' %}
+    {% endif %}
+  {% endfor %}
+
+  {% comment %}Position 3{% endcomment %}
+  {% for collection in collections %}
+    {% if collection.handle == settings.homepage_collection_3 %}
+      {% include 'collection-grid-item' %}
+    {% endif %}
+  {% endfor %}
+
+  {% comment %}Position 4{% endcomment %}
+  {% for collection in collections %}
+    {% if collection.handle == settings.homepage_collection_4 %}
+      {% include 'collection-grid-item' %}
+    {% endif %}
+  {% endfor %}
+
+  {% comment %}Position 5{% endcomment %}
+  {% for collection in collections %}
+    {% if collection.handle == settings.homepage_collection_5 %}
+      {% include 'collection-grid-item' %}
+    {% endif %}
+  {% endfor %}
+
+  {% comment %}Position 6{% endcomment %}
+  {% for collection in collections %}
+    {% if collection.handle == settings.homepage_collection_6 %}
+      {% include 'collection-grid-item' %}
+    {% endif %}
+  {% endfor %}
+
+  {% comment %}Position 7{% endcomment %}
+  {% for collection in collections %}
+    {% if collection.handle == settings.homepage_collection_7 %}
+      {% include 'collection-grid-item' %}
+    {% endif %}
+  {% endfor %}
+
+  {% comment %}Position 8{% endcomment %}
+  {% for collection in collections %}
+    {% if collection.handle == settings.homepage_collection_8 %}
+      {% include 'collection-grid-item' %}
+    {% endif %}
   {% endfor %}
 
 </div>

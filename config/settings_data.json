@@ -19,20 +19,18 @@
       "email_public": "keith@pineorchardprints.com",
       "footer_newsletter_enable": true,
       "footer_social_enable": true,
+      "homepage_collection_1": "homer",
+      "homepage_collection_2": "new-york-state-views",
+      "homepage_collection_3": "virginia-and-south-views",
+      "homepage_collection_4": "new-england-views",
+      "homepage_collection_5": "costume",
+      "homepage_collection_6": "civil-war",
+      "homepage_collection_7": "american-landscape",
+      "homepage_collection_8": "birds-moths-and-butterflies",
       "newsletter_form_action": "//pineorchardprints.us12.list-manage.com/subscribe/post?u=e52e4d702a703782e614c91dd&amp;id=da7a8d6a64",
       "shop_enable": false,
       "social_facebook": "pineorchardprints",
-      "social_twitter": "pineorchprints",
-      "homepage_collections": [
-        "homer",
-        "new-york-state-views",
-        "virginia-and-south-views",
-        "new-england-views",
-        "costume",
-        "civil-war",
-        "american-landscape",
-        "birds-moths-and-butterflies"
-      ]
+      "social_twitter": "pineorchprints"
     }
   }
 }
