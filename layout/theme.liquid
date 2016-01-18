@@ -263,41 +263,50 @@
     <footer class="site-footer small--text-center" role="contentinfo">
       <div class="wrapper">
         <div class="grid">
+          <div class="grid__item three-eighths small--one-whole small--text-left">
+            <ul class="footer-nav no-bullets">
+
+            {% for link in linklists.footer.links %}
+              <li>
+                <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+            </ul>
+          </div>
+          {% if settings.footer_newsletter_enable %}
+          <div class="grid__item five-eighths small--one-whole">
+            <h3>{{ 'layout.footer.newsletter_title' | t }}</h3>
+            {% if settings.newsletter_form_action != blank %}
+              {% assign form_action = settings.newsletter_form_action %}
+            {% else %}
+              {% assign form_action = '/404' %}
+            {% endif %}
+            <form action="{{ form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
+              <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
+              <span class="input-group-btn">
+                <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
+              </span>
+            </form>
+          </div>
+          {% endif %}
           {% if settings.footer_social_enable %}
-            <div class="grid__item large--three-eighths medium--one-third small--text-center">
-              <h3>{{ 'layout.footer.social_title' | t }}</h3>
-                <ul class="inline-list social-icons">
+            <div class="grid__item five-eighths small--one-whole text-right">
+                <ul class="no-bullets">
                   {% if settings.social_twitter != blank %}
                     <li>
                       <a href="http://twitter.com/{{ settings.social_twitter }}" title="{{ shop.name }} on Twitter">
-                        On Twitter: <strong>@{{ settings.social_twitter }}</strong>
+                        Follow <strong>@{{ settings.social_twitter }}</strong> on Twitter
                       </a>
                     </li>
                   {% endif %}
                   {% if settings.social_facebook != blank %}
                     <li>
                       <a href="https://www.facebook.com/{{ settings.social_facebook }}" title="{{ shop.name }} on Facebook">
-                        On Facebook: <strong>{{ settings.social_facebook }}</strong>
+                        Like <strong>{{ settings.social_facebook }}</strong> on Facebook
                       </a>
                     </li>
                   {% endif %}
                 </ul>
-            </div>
-          {% endif %}
-          {% if settings.footer_newsletter_enable %}
-            <div class="grid__item large--five-eighths medium--two-thirds">
-              <h3>{{ 'layout.footer.newsletter_title' | t }}</h3>
-              {% if settings.newsletter_form_action != blank %}
-                {% assign form_action = settings.newsletter_form_action %}
-              {% else %}
-                {% assign form_action = '/404' %}
-              {% endif %}
-              <form action="{{ form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
-                <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="EMAIL" id="mail" class="input-group-field" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
-                <span class="input-group-btn">
-                  <input type="submit" class="btn" name="subscribe" id="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
-                </span>
-              </form>
             </div>
           {% endif %}
         </div>
