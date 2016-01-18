@@ -2655,6 +2655,24 @@ label.error {
   }
 }
 
+.box--alert {
+  @extend .box;
+  background-color: $errorRedBg;
+  border: 1px solid $errorRed;
+  color: $errorRed;
+
+  a {
+    color: $colorTextBody;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      background-color: $colorTextBody;
+      color: $errorRedBg;
+    }
+  }
+}
+
 .box--promo {
   @extend .box;
   border: 1px solid $colorTextBody;

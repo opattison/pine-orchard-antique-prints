@@ -20,6 +20,7 @@
       "footer_newsletter_enable": true,
       "footer_social_enable": true,
       "newsletter_form_action": "//pineorchardprints.us12.list-manage.com/subscribe/post?u=e52e4d702a703782e614c91dd&amp;id=da7a8d6a64",
+      "shop_enable": false,
       "social_facebook": "pineorchardprints",
       "social_twitter": "pineorchprints",
       "homepage_collections": [

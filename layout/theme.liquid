@@ -255,6 +255,10 @@
     </div>
     <main class="wrapper main-content" role="main">
 
+      {% if settings.site_enable == false %}
+        {% include 'site-enable-false' %}
+      {% endif %}
+
       {{ content_for_layout }}
 
     </main>

@@ -4,6 +4,16 @@
     "settings": [
       {
         "type": "header",
+        "content": "Site functionality",
+        "info": "Check for normal use, uncheck to generate site-wide language that suggests that the shop is not accepting orders"
+      },
+      {
+        "type": "checkbox",
+        "id": "site_enable",
+        "label": "Enable normal site functionality"
+      },
+      {
+        "type": "header",
         "content": "Favicon"
       },
       {
