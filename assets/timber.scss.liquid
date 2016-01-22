@@ -2719,17 +2719,14 @@ input[name="discount"] {
 
 .credit {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   font-size: .8em;
   justify-content: flex-end;
   margin-top: ($gutter * 2);
 
-  &:hover a {
-    color: $colorLinkHover;
-  }
-
-  &:hover circle {
-    stroke: $colorLinkHover;
+  a:focus,
+  a:active {
+    background-color: transparent;
   }
 
   @include at-query ($min, $small) {
@@ -2738,39 +2735,32 @@ input[name="discount"] {
 }
 
 .credit__text {
-  display: block;
+  color: #397eac;
+  font-weight: $bodyFontDemi;
+  margin: 0 .25em;
 
-  a {
-    color: #397eac;
-    font-weight: $bodyFontMedium;
-  }
-
-  a:focus,
-  a:active {
-    background-color: transparent;
+  &:hover {
+    color: #cc3d33;
   }
 }
 
 .credit__logo {
-  display: block;
-  margin-left: 4px;
-  width: 1.125em;
+  height: 1.25em;
+  width: 1.25em;
+  align-self: flex-start;
 
-  a {
-    display: block;
-    height: 18px;
+  &:hover #layer12,
+  &:focus #layer12 {
+    fill: #397eac;
   }
 
-  a:focus {
-    background-color: transparent;
+  &:hover #layer6,
+  &:focus #layer6 {
+    fill: #bd1b0f;
   }
 
-  circle {
-    stroke: #397eac;
-    stroke-width: 48;
-  }
-
-  :hover circle {
-    stroke: $colorLinkHover;
+  &:hover #layer1,
+  &:focus #layer1 {
+    fill: #cc3d33;
   }
 }
