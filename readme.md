@@ -1,4 +1,4 @@
-[![2016-01-22-logo-type-400-pine-orchard](https://cloud.githubusercontent.com/assets/885300/12524243/a15eae84-c129-11e5-9867-0e22de124640.png)](http://pineorchardprints.com/)
+<a href="http://pineorchardprints.com/"><img src="https://cdn.shopify.com/s/files/1/1070/0518/files/logo.svg" width="400"></a>
 
 # Source for Pine Orchard Antique Prints
 
@@ -22,4 +22,4 @@ Display typography is [Cardo](http://scholarsfonts.net/cardofnt.html) (served by
 
 The site design is by [Oliver Pattison](http://olivermak.es) – all original design work copyright is retained.
 
-[![concentric circle logo](http://olivermak.es/resources/icons/favicon144.png)](http://olivermak.es)
+<a href="http://olivermak.es/"><img src="http://olivermak.es/resources/icons/favicon144.svg" width="100%" height="144"></a>
