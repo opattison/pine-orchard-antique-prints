@@ -1,4 +1,4 @@
-[![2016-01-22-logo-type-400-pine-orchard](https://cloud.githubusercontent.com/assets/885300/12524243/a15eae84-c129-11e5-9867-0e22de124640.png)]](http://pineorchardprints.com/)
+[![2016-01-22-logo-type-400-pine-orchard](https://cloud.githubusercontent.com/assets/885300/12524243/a15eae84-c129-11e5-9867-0e22de124640.png)](http://pineorchardprints.com/)
 
 # Source for Pine Orchard Antique Prints
 
