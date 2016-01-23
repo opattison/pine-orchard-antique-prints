@@ -22,4 +22,4 @@ Display typography is [Cardo](http://scholarsfonts.net/cardofnt.html) (served by
 
 The site design is by [Oliver Pattison](http://olivermak.es) – all original design work copyright is retained.
 
-[![concentric circle logo](http://olivermak.es/resources/icons/favicon144.png)](http://olivermak.es)
+<a href="http://olivermak.es/"><img src="http://olivermak.es/resources/icons/favicon144.svg" width="144"></a>
