@@ -1,4 +1,4 @@
-<a href="http://pineorchardprints.com/"><img src="https://cdn.shopify.com/s/files/1/1070/0518/files/logo.svg" max-width="400px"></a>
+<a href="http://pineorchardprints.com/"><img src="https://cdn.shopify.com/s/files/1/1070/0518/files/logo.svg" width="400"></a>
 
 # Source for Pine Orchard Antique Prints
 
