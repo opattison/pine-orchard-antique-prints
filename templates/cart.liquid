@@ -74,9 +74,6 @@
         {% if cart.item_count >= 2 and settings.bulk_discount_enable == true %}
         <label for="discount"><strong>10% discount will be applied!</strong></label>
         <input class="large--one-half" name="discount" value="two-item-discount-20150106" hidden="true"/>
-        {% else %}
-        <label for="discount">Discount code:</label>
-        <input class="large--one-half" name="discount"/>
         {% endif %}
       </div>
       <div class="grid__item push--large--one-eighth one-quarter medium-down--one-whole text-right">
