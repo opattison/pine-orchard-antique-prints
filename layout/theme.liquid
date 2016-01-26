@@ -225,7 +225,7 @@
               {% endfor %}
             </ul>
 
-            <div class="grid__item site-nav three-eighths text-right right">
+            <div class="grid__item site-nav three-eighths text-right right {% if template == 'cart' %}site-nav--active{% endif %}">
               <a href="/cart" class="site-nav__link">
                 {{ 'layout.cart.title' | t }} (<span class="CartCount">{{ cart.item_count }}</span> {{ 'layout.cart.items_count' | t: count: cart.item_count }} <span id="CartCost">{{ cart.total_price | money }}</span>)
               </a>
