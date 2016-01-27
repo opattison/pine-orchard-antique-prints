@@ -236,6 +236,8 @@ var ajaxCart = (function(module, $) {
 
     $addToCartText.text('Added to Cart');
 
+    $formContainer.after('<div class="note form-success">Added! <a href="/collections">Keep shopping</a> or <a href="/cart">proceed to cart</a>.</div>')
+
     ShopifyAPI.getCart(cartUpdateCallback);
   };
 
@@ -247,7 +249,7 @@ var ajaxCart = (function(module, $) {
 
     if (!!data.message) {
       if (data.status == 422) {
-        $formContainer.after('<div class="errors qty-error">This item has already been added to your cart. Each print is unique!</div>')
+        $formContainer.after('<div class="errors qty-error">This item has already been added to <a href="/cart">your cart</a>. Each print is unique!</div>')
       }
     }
   };

@@ -2385,7 +2385,7 @@ label.error {
   border-color: $successGreen;
 
   a {
-    color: $successGreen;
+    color: $colorTextBody;
     text-decoration: underline;
 
     &:hover {
@@ -2498,6 +2498,16 @@ label.error {
   margin-top: ($gutter / 2);
 }
 
+label[for="discount"] {
+  cursor: default;
+  display: inline-block;
+  margin-top: ($gutter / 2);
+}
+
+.continue {
+  margin-top: ($gutter / 2);
+}
+
 .cart__subtotal-title {
   display: inline-block;
   font-weight: $bodyFontMedium;
@@ -2507,10 +2517,6 @@ label.error {
   margin: ($gutter / 2) 0 ($gutter / 2) ($gutter / 4);
   display: inline-block;
   font-weight: $bodyFontDemi;
-
-  @include at-query ($min, $small) {
-    margin-top: $gutter;
-  }
 }
 
 .cart__empty {
@@ -2702,19 +2708,6 @@ label.error {
   @include at-query ($min, $small) {
     text-align: right;
   }
-}
-
-label[for="discount"] {
-  cursor: default;
-  display: inline-block;
-  font-weight: $bodyFontMedium;
-  padding-top: 18px;
-}
-
-input[name="discount"] {
-  margin-top: 18px;
-  font-family: Consolas, monospace;
-  font-size: 14px;
 }
 
 .credit {

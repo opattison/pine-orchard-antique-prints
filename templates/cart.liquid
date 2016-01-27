@@ -70,25 +70,23 @@
       </div>
     {% endif %}
     <div class="grid--full">
-      <div class="grid__item push--large--one-eighth large--one-half medium-down--text-right">
-        {% if cart.item_count >= 2 and settings.bulk_discount_enable == true %}
-        <label for="discount"><strong>10% discount will be applied!</strong></label>
-        <input class="large--one-half" name="discount" value="two-item-discount-20150106" hidden="true"/>
-        {% else %}
-        <label for="discount">Discount code:</label>
-        <input class="large--one-half" name="discount"/>
-        {% endif %}
+      <div class="grid__item push--large--one-eighth large--three-eighths one-half small--one-whole small--text-right">
+        <a class="btn--secondary continue" href="/collections/">Continue Browsing</a>
       </div>
-      <div class="grid__item push--large--one-eighth one-quarter medium-down--one-whole text-right">
-          <div>
-            <div class="cart__subtotal-title">
-              {{ 'cart.general.subtotal' | t }}:
-            </div>
-            <div class="cart__subtotal">
-              {{ cart.total_price | money }}
-            </div>
+      <div class="grid__item push--large--one-eighth large--three-eighths one-half small--one-whole text-right">
+        {% if cart.item_count >= 2 and settings.bulk_discount_enable == true %}
+        <label for="discount"><em>10% discount will be applied!</em></label>
+        <input class="large--one-half" name="discount" value="two-item-discount-20150106" hidden="true"/>
+        {% endif %}
+        <div>
+          <div class="cart__subtotal-title">
+            {{ 'cart.general.subtotal' | t }}:
           </div>
-          <input type="submit" name="checkout" class="btn--secondary" value="{{ 'cart.general.checkout' | t }}">
+          <div class="cart__subtotal">
+            {{ cart.total_price | money }}
+          </div>
+        </div>
+        <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
       </div>
     </div>
   </form>
