@@ -32,11 +32,11 @@
         Create thumbnails if we have more than one product image
       {% endcomment %}
       {% if product.images.size > 1 %}
-        <ul class="product-single__thumbnails grid-uniform" id="ProductThumbs">
+        <ul class="product-single__thumbnails" id="ProductThumbs">
 
           {% for image in product.images %}
-            <li class="grid__item">
-              <a href="{{ image.src | img_url: 'large' }}" class="product-single__thumbnail">
+            <li>
+              <a href="{{ image.src | img_url: '2048x2048' }}" class="product-single__thumbnail">
                 <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
               </a>
             </li>

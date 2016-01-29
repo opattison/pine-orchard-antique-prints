@@ -265,6 +265,8 @@ timber.productImageSwitch = function () {
       evt.preventDefault();
       var newImage = $(this).attr('href');
       timber.switchImage(newImage, null, timber.cache.$productImage);
+      var newImageLink = $('#ProductPhotoImg').parent('a');
+      timber.switchImageURL(newImage, null, newImageLink)
     });
   }
 };
@@ -273,6 +275,12 @@ timber.switchImage = function (src, imgObject, el) {
   // Make sure element is a jquery object
   var $el = $(el);
   $el.attr('src', src);
+};
+
+timber.switchImageURL = function (href, imgObject, el) {
+  // Make sure element is a jquery object
+  var $el = $(el);
+  $el.attr('href', href);
 };
 
 timber.responsiveVideos = function () {
