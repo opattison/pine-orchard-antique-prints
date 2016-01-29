@@ -2302,6 +2302,10 @@ label.error {
   a {
     cursor: zoom-in;
   }
+
+  img {
+    max-height: 480px;
+  }
 }
 
 .product-single__photos,
@@ -2313,13 +2317,26 @@ label.error {
     max-width: 100%;
   }
 
-  a, img {
+  a,
+  img {
     display: block;
     margin: 0 auto;
   }
+}
+
+.product-single__thumbnails {
+  list-style: none;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+
+  a:focus {
+    background-color: transparent;
+    outline: solid 4px $colorLinkHover;
+  }
 
   li {
-    margin-bottom: $gutter;
+    margin: 0 ($gutter / 2) ($gutter / 2);
     min-width: 0;
   }
 }
