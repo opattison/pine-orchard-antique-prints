@@ -4,13 +4,19 @@
     "settings": [
       {
         "type": "header",
-        "content": "Shop functionality",
-        "info": "Check for normal use, uncheck to generate site-wide language that suggests that the shop is not accepting orders."
+        "content": "Vacation on/off"
       },
       {
         "type": "checkbox",
         "id": "shop_enable",
-        "label": "Enable normal site functionality"
+        "label": "This shop accepts orders",
+        "info": "Check the box for normal use; uncheck to generate site-wide language that suggests that the shop is not accepting orders. (Add a vacation date in the following field.)"
+      },
+      {
+        "type": "text",
+        "id": "shop_vacation",
+        "label": "“Back in business” date",
+        "info": "If the shop functionality is turned off, this date will mark the day you plan to re-open the shop."
       },
       {
         "type": "header",

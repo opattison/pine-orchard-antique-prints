@@ -255,8 +255,8 @@
     </div>
     <main class="wrapper main-content" role="main">
 
-      {% if settings.site_enable == false %}
-        {% include 'site-enable-false' %}
+      {% if settings.shop_enable == false %}
+        {% include 'vacation-mode' %}
       {% endif %}
 
       {{ content_for_layout }}
