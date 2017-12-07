@@ -76,7 +76,7 @@
       <div class="grid__item push--large--one-eighth large--three-eighths one-half small--one-whole text-right">
         {% if cart.item_count >= 2 and settings.bulk_discount_enable == true %}
         <label for="discount"><em>10% bulk discount will be applied!</em></label>
-        <input class="large--one-half" name="discount" value="{{ settings.bulk_discount }}" hidden="true"/>
+        <input class="large--one-half" name="discount" value="{{ settings.bulk_discount_code }}" hidden="true"/>
         {% endif %}
         {% if settings.sale_custom_enable %}
         <label for="discount"><em>{{ settings.sale_custom_amount }}%</em> <code>{{ settings.sale_custom_code }}</code> <em>discount will be applied!</em></label>
