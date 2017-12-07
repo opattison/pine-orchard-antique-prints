@@ -86,7 +86,8 @@
             {{ 'cart.general.subtotal' | t }}:
           </div>
           <div class="cart__subtotal">
-            {{ cart.total_price | money }}
+            <del>{{ cart.total_price | money }}</del>
+            {{ cart.total_price | times: 0.75 | money }}
           </div>
         </div>
         {% else %}
