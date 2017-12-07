@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-    <title>Group</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Custom-Preset" fill="#9A3434">
-            <g id="Group" transform="translate(43.615530, 43.615530) rotate(45.000000) translate(-43.615530, -43.615530) translate(-18.884470, -156.384470)">
-                <rect id="Rectangle" x="50" y="0" width="25" height="400"></rect>
-                <rect id="Rectangle" x="0" y="0" width="25" height="400"></rect>
-                <rect id="Rectangle" x="100" y="0" width="25" height="400"></rect>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="176" height="176" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#305309" d="M176.198-106.645l17.678 17.678-282.843 282.843-17.678-17.678z"/><path fill="#9A3434" d="M140.843-142l17.677 17.678-282.842 282.842L-142 140.843zM211.553-71.29l17.678 17.678-282.843 282.843-17.677-17.678z"/></g></svg>
