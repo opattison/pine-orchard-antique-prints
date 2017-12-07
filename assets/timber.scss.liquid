@@ -2718,6 +2718,28 @@ label[for="discount"] {
   }
 }
 
+.box--sale {
+  @extend .box;
+  border: 2px solid $colorBtnPrimary;
+  padding: 1em 4em;
+  margin: 2em auto;
+  width: 100%;
+
+  background-image: url({{ 'pattern-red-stripes.svg' | asset_url }});
+  background-repeat: no-repeat;
+  background-size: 4em;
+  background-position: left top;
+
+  h2,
+  strong {
+    color: $colorBtnPrimary;
+  }
+
+  p {
+    text-align: left;
+  }
+}
+
 .disclaimer {
   font-size: em(18px);
   text-align: center;

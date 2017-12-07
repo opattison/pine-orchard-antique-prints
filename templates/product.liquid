@@ -162,6 +162,10 @@
         {% endif %}
       {% endif %}
 
+      {% if settings.sale_custom_enable == true %}
+        {% include 'sale-custom' %}
+      {% endif %}
+
     </div>
   </div>
 

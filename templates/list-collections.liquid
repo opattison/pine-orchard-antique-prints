@@ -47,4 +47,6 @@
 
   {% endfor %}
 
-</div>
+{% if settings.sale_custom_enable == true %}
+  {% include 'sale-custom' %}
+{% endif %}

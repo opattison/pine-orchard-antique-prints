@@ -75,9 +75,12 @@
       </div>
       <div class="grid__item push--large--one-eighth large--three-eighths one-half small--one-whole text-right">
         {% if cart.item_count >= 2 and settings.bulk_discount_enable == true %}
-        <label for="discount"><em>10% discount will be applied!</em></label>
-        <input class="large--one-half" name="discount" value="two-item-discount-20150106" hidden="true"/>
+        <label for="discount"><em>10% bulk discount will be applied!</em></label>
+        <input class="large--one-half" name="discount" value="{{ settings.bulk_discount }}" hidden="true"/>
         {% endif %}
+        {% if settings.sale_custom_enable %}
+        <label for="discount"><em>{{ settings.sale_custom_amount }}%</em> <code>{{ settings.sale_custom_code }}</code> <em>discount will be applied!</em></label>
+        <input class="large--one-half" name="discount" value="{{ settings.sale_custom_code }}" hidden="true"/>
         <div>
           <div class="cart__subtotal-title">
             {{ 'cart.general.subtotal' | t }}:
@@ -86,6 +89,16 @@
             {{ cart.total_price | money }}
           </div>
         </div>
+        {% else %}
+        <div>
+          <div class="cart__subtotal-title">
+            {{ 'cart.general.subtotal' | t }}:
+          </div>
+          <div class="cart__subtotal">
+            {{ cart.total_price | money }}
+          </div>
+        </div>
+        {% endif %}
         <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
       </div>
     </div>
@@ -97,6 +110,10 @@
   <h1>{{ 'cart.general.title' | t }}</h1>
   <p class="cart__empty"><em>{{ 'cart.general.empty' | t }}</em></p>
   {{ 'cart.general.continue_browsing_html' | t }}
+{% endif %}
+
+{% if settings.sale_custom_enable == true %}
+  {% include 'sale-custom' %}
 {% endif %}
 
 <div class="box-container">

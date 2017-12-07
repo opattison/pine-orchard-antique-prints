@@ -6,6 +6,10 @@
 
 {% endcomment %}
 
+{% if settings.sale_custom_enable == true %}
+  {% include 'sale-custom' %}
+{% endif %}
+
 {% paginate collection.products by 12 %}
 
 <div class="grid">

@@ -7,6 +7,10 @@
     - http://docs.shopify.com/themes/liquid-variables/global
 {% endcomment %}
 
+{% if settings.sale_custom_enable == true %}
+  {% include 'sale-custom' %}
+{% endif %}
+
 <h2><a href="/collections/frontpage" title="Browse all {{ 'homepage.sections.frontpage_title' | t }}">{{ 'homepage.sections.frontpage_title' | t }}</a></h2>
 
 {% comment %}
