@@ -87,7 +87,8 @@
           </div>
           <div class="cart__subtotal">
             <del>{{ cart.total_price | money }}</del>
-            {{ cart.total_price | times: 0.75 | money }}
+            {% capture  discount_percent %}{{ settings.sale_custom_amount | minus: 100 | abs | divided_by: 100.00 }}{% endcapture %}
+            {{ cart.total_price | times: discount_percent | money }}
           </div>
         </div>
         {% else %}

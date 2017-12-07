@@ -227,7 +227,8 @@
 
             <div class="grid__item site-nav three-eighths text-right right {% if template == 'cart' %}site-nav--active{% endif %}">
               <a href="/cart" class="site-nav__link">
-                {{ 'layout.cart.title' | t }} (<span class="CartCount">{{ cart.item_count }}</span> {{ 'layout.cart.items_count' | t: count: cart.item_count }} <span id="CartCost">{{ cart.total_price | money }}</span>)
+                {{ 'layout.cart.title' | t }} (<span class="CartCount">{{ cart.item_count }}</span> {{ 'layout.cart.items_count' | t: count: cart.item_count }} <span id="CartCost">{% if settings.sale_custom_enable %}{% capture  discount_percent %}{{ settings.sale_custom_amount | minus: 100 | abs | divided_by: 100.00 }}{% endcapture %}
+                {{ cart.total_price | times: discount_percent | money }}{% else %}{{ cart.total_price | money }}{% endif %}</span>)
               </a>
             </div>
           </div>
