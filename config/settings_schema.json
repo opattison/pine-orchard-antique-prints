@@ -229,9 +229,38 @@
       },
       {
         "type": "text",
-        "id": "bulk_discount",
+        "id": "bulk_discount_code",
         "label": "Bulk discount code for more than two items",
         "info": "Match to the code on [Discounts page](https:\/\/pine-orchard-prints.myshopify.com\/admin\/discounts)"
+      },
+      {
+        "type": "checkbox",
+        "id": "sale_custom_enable",
+        "label": "Enable sale"
+      },
+      {
+        "type": "text",
+        "id": "sale_custom_code",
+        "label": "Sale",
+        "info": "Match to a custom code on [Discounts page](https:\/\/pine-orchard-prints.myshopify.com\/admin\/discounts)"
+      },
+      {
+        "type": "number",
+        "id": "sale_custom_amount",
+        "label": "Custom sale amount (percentage off)",
+        "info": "Match to the amount on [Discounts page](https:\/\/pine-orchard-prints.myshopify.com\/admin\/discounts)"
+      },
+      {
+        "type": "text",
+        "id": "sale_custom_title",
+        "label": "Custom sale title",
+        "info": "The name of the sale, shown on the public website."
+      },
+      {
+        "type": "text",
+        "id": "sale_custom_text",
+        "label": "Details about the sale",
+        "info": "Details about the sale, shown on the public website."
       }
     ]
   }

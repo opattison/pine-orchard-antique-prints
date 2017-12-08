@@ -147,7 +147,7 @@
       {% endcomment %}
       {% if collection %}
         {% if collection.previous_product or collection.next_product %}
-          <p>
+          <div class="product-nav">
             {% if collection.previous_product %}
               <span class="prev">
                 {{ 'products.general.previous_product_html' | t | link_to: collection.previous_product }}
@@ -158,8 +158,12 @@
                 {{ 'products.general.next_product_html' | t | link_to: collection.next_product }}
               </span>
             {% endif %}
-          </p>
+          </div>
         {% endif %}
+      {% endif %}
+
+      {% if settings.sale_custom_enable == true %}
+        {% include 'sale-custom' %}
       {% endif %}
 
     </div>
